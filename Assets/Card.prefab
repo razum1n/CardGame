@@ -1820,7 +1820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.38679248, g: 0.24630654, b: 0.24630654, a: 0.7294118}
+  m_Color: {r: 0.7735849, g: 0.5218049, b: 0.5218049, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1913,6 +1913,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27c692f16709b1142a044c9ecc333756, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardType: 1
   cardAsset: {fileID: 11400000, guid: 71f4f3bc009cc71409e5f51a9b408bbd, type: 2}
   question: {fileID: 9008511936361015666}
   answerOne: {fileID: 777535657}
@@ -1996,7 +1997,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.11320752, g: 0.0710217, b: 0.0710217, a: 0.43137255}
+  m_Color: {r: 0.8301887, g: 0.8301887, b: 0.8301887, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:

@@ -6,12 +6,18 @@ using TMPro;
 
 public class CardManager : MonoBehaviour
 {
+    public enum TypeOfCard {SKENARIO, QUESTION};
+
+    public TypeOfCard cardType;
+
     public CardAsset cardAsset;
 
     public TextMeshProUGUI question;
     public TextMeshProUGUI answerOne;
     public TextMeshProUGUI answerTwo;
     public TextMeshProUGUI answerThree;
+    public TextMeshProUGUI correctInfo;
+    public TextMeshProUGUI wrongInfo;
 
     public GameObject cardFace;
     public GameObject cardCorrect;
@@ -27,10 +33,22 @@ public class CardManager : MonoBehaviour
 
     public void ReadCardInfo()
     {
-        question.text = cardAsset.Question;
-        answerOne.text = cardAsset.OptionOneText;
-        answerTwo.text = cardAsset.OptionTwoText;
-        answerThree.text = cardAsset.OptionThreeText;
+        if(cardType == TypeOfCard.QUESTION)
+        {
+            question.text = cardAsset.Question;
+            answerOne.text = cardAsset.OptionOneText;
+            answerTwo.text = cardAsset.OptionTwoText;
+            answerThree.text = cardAsset.OptionThreeText;
+        }
+        else if(cardType == TypeOfCard.SKENARIO)
+        {
+            question.text = cardAsset.Question;
+            answerOne.text = cardAsset.OptionOneText;
+            answerTwo.text = cardAsset.OptionTwoText;
+            correctInfo.text = cardAsset.Reasoning;
+            wrongInfo.text = cardAsset.Reasoning;
+        }
+
     }
 
     // Update is called once per frame

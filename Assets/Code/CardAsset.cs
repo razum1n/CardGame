@@ -15,4 +15,8 @@ public class CardAsset : ScriptableObject
     public string OptionThreeText;
     public int CorrectAnswer;
 
+    [Header("Info")]
+    [TextArea(2, 3)]
+    public string Reasoning;
+
 }

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8391c7fbf5719fc47990693ab3fb904b, type: 3}
+  m_Name: S6
+  m_EditorClassIdentifier: 
+  Question: "Olet kunnanjohtaja, ja tavoitteenasi on tehd\xE4 kunnastanne ravinneneutraali.
+    T\xE4m\xE4 tarkoittaa\u2026"
+  OptionOneText: "orgaanisten ravinteiden hy\xF6dynt\xE4mist\xE4 l\xE4hell\xE4 niiden
+    syntypaikkaa"
+  OptionTwoText: "ravinnevuotojen ja p\xE4\xE4st\xF6jen hyvitt\xE4mist\xE4 esimerkiksi
+    p\xE4\xE4st\xF6kaupan keinoin"
+  OptionThreeText: 
+  CorrectAnswer: 1
+  Reasoning: "Ravinneneutraaliuden k\xE4site tarkoittaa, ett\xE4 ravinnetase on nolla.
+    T\xE4ll\xF6in alueelle tulee ja sielt\xE4 l\xE4htee pois saman verran hy\xF6tyk\xE4ytettyj\xE4
+    ravinteita."

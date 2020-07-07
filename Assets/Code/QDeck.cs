@@ -28,12 +28,18 @@ public class QDeck : MonoBehaviour
 
     public void SpawnCard()
     {
-        if (cardNumber > 0)
-            Destroy(cardInPlay);
-        cardInPlay = Instantiate(deckOfCards[cardNumber], spawnPoint.transform.position, spawnPoint.transform.rotation);
-        deckOfCards[cardNumber].GetComponent<CardManager>().cardAsset = Resources.Load<CardAsset>("Questions/Q" + questionNumber.ToString());
-        questionNumber++;
-        cardNumber++;
+        if (cardNumber < deckOfCards.Count)
+        {
+            if (cardNumber > 0)
+                Destroy(cardInPlay);
+            cardInPlay = Instantiate(deckOfCards[cardNumber], spawnPoint.transform.position, spawnPoint.transform.rotation);
+            if(deckOfCards[cardNumber].GetComponent<CardManager>().cardType == CardManager.TypeOfCard.QUESTION)
+                deckOfCards[cardNumber].GetComponent<CardManager>().cardAsset = Resources.Load<CardAsset>("Questions/Q" + questionNumber.ToString());
+            else
+                deckOfCards[cardNumber].GetComponent<CardManager>().cardAsset = Resources.Load<CardAsset>("Questions/S" + questionNumber.ToString());
+            questionNumber++;
+            cardNumber++;
+        }
     }
     // Update is called once per frame
     void Update()

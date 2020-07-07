@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8391c7fbf5719fc47990693ab3fb904b, type: 3}
+  m_Name: S10
+  m_EditorClassIdentifier: 
+  Question: "Olet ostamassa vaippoja vauvallesi, ja pohdit teippivaippojen, ja pest\xE4vien
+    kestovaippojen v\xE4lill\xE4. Kumpi on ymp\xE4rist\xF6\xE4 s\xE4\xE4st\xE4v\xE4mpi
+    vaihtoehto?"
+  OptionOneText: teippivaipat
+  OptionTwoText: kestovaipat
+  OptionThreeText: 
+  CorrectAnswer: 2
+  Reasoning: "Kaatopaikat ymp\xE4ri maailman t\xE4yttyv\xE4t maatumattomista teippivaipoista,
+    jolloin kestovaipat ovat ehdottomasti kest\xE4v\xE4mpi valinta."

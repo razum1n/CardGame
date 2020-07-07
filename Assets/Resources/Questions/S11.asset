@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8391c7fbf5719fc47990693ab3fb904b, type: 3}
+  m_Name: S11
+  m_EditorClassIdentifier: 
+  Question: "Ymp\xE4rist\xF6tietoisena kuluttajana pohdit mit\xE4 lis\xE4kett\xE4
+    k\xE4ytt\xE4isit ateriaa valmistaessasi, riisi\xE4 vai perunaa?"
+  OptionOneText: "riisi\xE4"
+  OptionTwoText: perunaa
+  OptionThreeText: 
+  CorrectAnswer: 2
+  Reasoning: "Riisi\xE4 t\xE4ytyy tuoda Suomeen kaukaa ulkomailta, mik\xE4 luo p\xE4\xE4st\xF6j\xE4.
+    Riisin viljelyyn k\xE4ytet\xE4\xE4n my\xF6s moninkertainen m\xE4\xE4r\xE4 vett\xE4
+    verrattuna perunanviljelyyn."
