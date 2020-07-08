@@ -872,7 +872,7 @@ GameObject:
   - component: {fileID: 589440406}
   m_Layer: 0
   m_Name: SCard
-  m_TagString: Untagged
+  m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -935,7 +935,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardType: 0
-  cardAsset: {fileID: 0}
+  cardAsset: {fileID: 11400000, guid: 8338db1b7790ebd419cc644f33c0a6ef, type: 2}
   question: {fileID: 2338127386542989716}
   answerOne: {fileID: 2338127386605412318}
   answerTwo: {fileID: 2338127385412182315}
@@ -945,6 +945,10 @@ MonoBehaviour:
   cardFace: {fileID: 2338127386680457121}
   cardCorrect: {fileID: 1784917562}
   cardFalse: {fileID: 304104960}
+  gameManager: {fileID: 0}
+  score: 5
+  waste: 5
+  fosforPrice: 0.2
 --- !u!1 &2338127386319649747
 GameObject:
   m_ObjectHideFlags: 0

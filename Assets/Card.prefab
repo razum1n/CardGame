@@ -1851,7 +1851,7 @@ GameObject:
   - component: {fileID: 2043358185}
   m_Layer: 0
   m_Name: Card
-  m_TagString: Untagged
+  m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1919,9 +1919,14 @@ MonoBehaviour:
   answerOne: {fileID: 777535657}
   answerTwo: {fileID: 710080488}
   answerThree: {fileID: 1273011261}
+  correctInfo: {fileID: 0}
+  wrongInfo: {fileID: 0}
   cardFace: {fileID: 9008511938005772051}
   cardCorrect: {fileID: 1746193597}
   cardFalse: {fileID: 1689688067}
+  gameManager: {fileID: 0}
+  score: 5
+  fosforPrice: 0.2
 --- !u!114 &2043358185
 MonoBehaviour:
   m_ObjectHideFlags: 0

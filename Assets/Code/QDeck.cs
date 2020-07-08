@@ -15,6 +15,7 @@ public class QDeck : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         for(int i=0;i<deckOfCards.Count;i++)
         {
             if (deckOfCards[i] == null)
@@ -30,15 +31,16 @@ public class QDeck : MonoBehaviour
     {
         if (cardNumber < deckOfCards.Count)
         {
-            if (cardNumber > 0)
-                Destroy(cardInPlay);
+                //if (cardNumber > 0)
+                //    Destroy(cardInPlay);
             cardInPlay = Instantiate(deckOfCards[cardNumber], spawnPoint.transform.position, spawnPoint.transform.rotation);
             if(deckOfCards[cardNumber].GetComponent<CardManager>().cardType == CardManager.TypeOfCard.QUESTION)
                 deckOfCards[cardNumber].GetComponent<CardManager>().cardAsset = Resources.Load<CardAsset>("Questions/Q" + questionNumber.ToString());
             else
                 deckOfCards[cardNumber].GetComponent<CardManager>().cardAsset = Resources.Load<CardAsset>("Questions/S" + questionNumber.ToString());
-            questionNumber++;
-            cardNumber++;
+            cardInPlay.GetComponent<CardManager>().gameManager = GameObject.FindGameObjectWithTag("Gamemanager").GetComponent<GameManager>();
+            questionNumber += 1;
+            cardNumber += 1;
         }
     }
     // Update is called once per frame

@@ -23,6 +23,14 @@ public class CardManager : MonoBehaviour
     public GameObject cardCorrect;
     public GameObject cardFalse;
 
+    public GameManager gameManager;
+
+    public int score;
+
+    public int waste;
+
+    public float fosforPrice;
+
     private int answer;
 
     // Start is called before the first frame update
@@ -81,11 +89,16 @@ public class CardManager : MonoBehaviour
         {
             cardFace.SetActive(false);
             cardCorrect.SetActive(true);
+            gameManager.UpdateScore(score);
+            gameManager.UpdateFosfor(fosforPrice);
+            gameManager.UpdateWaste(-waste);
         }
         else if (answer != cardAsset.CorrectAnswer)
         {
             cardFace.SetActive(false);
             cardFalse.SetActive(true);
+            gameManager.UpdateFosfor(-fosforPrice);
+            gameManager.UpdateWaste(waste);
         }
     }
 }
