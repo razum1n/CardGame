@@ -15,7 +15,7 @@ public class QDeck : MonoBehaviour
     public GameManager gameManager;
     public int price;
     private int questionNumber = 0;
-    private int cardNumber = 0;
+    public int cardNumber = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -72,21 +72,25 @@ public class QDeck : MonoBehaviour
 
     private void Spawning()
     {
-        cardInPlay = Instantiate(deckOfCards[cardNumber], spawnPoint.transform.position, spawnPoint.transform.rotation);
-        if (deckOfCards[cardNumber].GetComponent<CardManager>().cardType == CardManager.TypeOfCard.QUESTION)
+        if(cardNumber >= 0)
         {
-            deckOfCards[cardNumber].GetComponent<CardManager>().cardAsset = Resources.Load<CardAsset>("Questions/Q" + questionNumber.ToString());
-            deckOfCards.RemoveAt(cardNumber);
+            cardInPlay = Instantiate(deckOfCards[cardNumber], spawnPoint.transform.position, spawnPoint.transform.rotation);
+            if (deckOfCards[cardNumber].GetComponent<CardManager>().cardType == CardManager.TypeOfCard.QUESTION)
+            {
+                deckOfCards[cardNumber].GetComponent<CardManager>().cardAsset = Resources.Load<CardAsset>("Questions/Q" + questionNumber.ToString());
+                deckOfCards.RemoveAt(cardNumber);
+            }
+
+            else
+            {
+                deckOfCards[cardNumber].GetComponent<CardManager>().cardAsset = Resources.Load<CardAsset>("Questions/S" + questionNumber.ToString());
+                deckOfCards.RemoveAt(cardNumber);
+            }
+            cardInPlay.GetComponent<CardManager>().gameManager = GameObject.FindGameObjectWithTag("Gamemanager").GetComponent<GameManager>();
+            questionNumber += 1;
+            cardNumber = cardNumber - 1;
         }
 
-        else
-        {
-            deckOfCards[cardNumber].GetComponent<CardManager>().cardAsset = Resources.Load<CardAsset>("Questions/S" + questionNumber.ToString());
-            deckOfCards.RemoveAt(cardNumber);
-        }        
-        cardInPlay.GetComponent<CardManager>().gameManager = GameObject.FindGameObjectWithTag("Gamemanager").GetComponent<GameManager>();
-        questionNumber += 1;
-        cardNumber -= 1;
     }
 
     // Update is called once per frame
