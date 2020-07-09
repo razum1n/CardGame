@@ -5,10 +5,15 @@ using UnityEngine;
 
 public class QDeck : MonoBehaviour
 {
+    public enum TypeOfDeck { SKENARIO, QUESTION };
+    public TypeOfDeck deckType;
+
     public GameObject Card;
     public GameObject cardInPlay;
     public List<GameObject> deckOfCards = new List<GameObject>();
     public GameObject spawnPoint;
+    public GameManager gameManager;
+    public int price;
     private int questionNumber = 0;
     private int cardNumber = 0;
 
@@ -24,25 +29,66 @@ public class QDeck : MonoBehaviour
             questionNumber++;
         }
         questionNumber = 1;
+
+        cardNumber = deckOfCards.Count - 1;
     }
 
 
     public void SpawnCard()
     {
-        if (cardNumber < deckOfCards.Count)
+        if(deckType == TypeOfDeck.QUESTION)
         {
-                //if (cardNumber > 0)
-                //    Destroy(cardInPlay);
-            cardInPlay = Instantiate(deckOfCards[cardNumber], spawnPoint.transform.position, spawnPoint.transform.rotation);
-            if(deckOfCards[cardNumber].GetComponent<CardManager>().cardType == CardManager.TypeOfCard.QUESTION)
-                deckOfCards[cardNumber].GetComponent<CardManager>().cardAsset = Resources.Load<CardAsset>("Questions/Q" + questionNumber.ToString());
+            if(gameManager.bugCount < 1)
+             {
+                if ((gameManager.players[gameManager.currentPlayer - 1].score >= price) && (cardNumber < deckOfCards.Count))
+                {
+                    gameManager.players[gameManager.currentPlayer - 1].score -= price;
+                    Spawning();
+                }
+                else
+                {
+                    Spawning();
+                }
+
+             }
             else
-                deckOfCards[cardNumber].GetComponent<CardManager>().cardAsset = Resources.Load<CardAsset>("Questions/S" + questionNumber.ToString());
-            cardInPlay.GetComponent<CardManager>().gameManager = GameObject.FindGameObjectWithTag("Gamemanager").GetComponent<GameManager>();
-            questionNumber += 1;
-            cardNumber += 1;
+            {
+                Spawning();
+            }
+
+
         }
+        else
+        {
+            if (cardNumber < deckOfCards.Count)
+            {
+                Spawning();
+            }
+        }
+
+
+
     }
+
+    private void Spawning()
+    {
+        cardInPlay = Instantiate(deckOfCards[cardNumber], spawnPoint.transform.position, spawnPoint.transform.rotation);
+        if (deckOfCards[cardNumber].GetComponent<CardManager>().cardType == CardManager.TypeOfCard.QUESTION)
+        {
+            deckOfCards[cardNumber].GetComponent<CardManager>().cardAsset = Resources.Load<CardAsset>("Questions/Q" + questionNumber.ToString());
+            deckOfCards.RemoveAt(cardNumber);
+        }
+
+        else
+        {
+            deckOfCards[cardNumber].GetComponent<CardManager>().cardAsset = Resources.Load<CardAsset>("Questions/S" + questionNumber.ToString());
+            deckOfCards.RemoveAt(cardNumber);
+        }        
+        cardInPlay.GetComponent<CardManager>().gameManager = GameObject.FindGameObjectWithTag("Gamemanager").GetComponent<GameManager>();
+        questionNumber += 1;
+        cardNumber -= 1;
+    }
+
     // Update is called once per frame
     void Update()
     {

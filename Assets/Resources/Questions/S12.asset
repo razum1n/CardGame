@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8391c7fbf5719fc47990693ab3fb904b, type: 3}
+  m_Name: S12
+  m_EditorClassIdentifier: 
+  Question: "Olet k\xE4ym\xE4ss\xE4 l\xE4pi l\xE4\xE4kekaappiasi, ja huomaat, ett\xE4
+    sinulla on paljon vanhentuneita l\xE4\xE4kkeit\xE4. Miten toimit?"
+  OptionOneText: "palautat vanhat l\xE4\xE4kkeet apteekkiin"
+  OptionTwoText: "ved\xE4t l\xE4\xE4kkeet alas viem\xE4rist\xE4"
+  OptionThreeText: 
+  CorrectAnswer: 1
+  Reasoning: "Vanhat l\xE4\xE4kkeet tulee palauttaa apteekkiin, josta ne toimitetaan
+    turvallisesti h\xE4vitett\xE4viksi. Viem\xE4riin kulkeutuneet l\xE4\xE4keaineet
+    lukeutuvat haitta-aineiksi, ja niit\xE4 kulkeutuu my\xF6s ihmisten elimist\xF6n
+    kautta. L\xE4\xE4kkeiden tarpeenmukainen k\xE4ytt\xF6 on t\xE4rke\xE4\xE4, mutta
+    ylim\xE4\xE4r\xE4iset viem\xE4riin kulkeutuneet l\xE4\xE4kkeet kuormittavat j\xE4tevedenpuhdistamoja."

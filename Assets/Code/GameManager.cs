@@ -6,11 +6,18 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public TextMeshProUGUI currentPlayerText;
-    public TextMeshProUGUI currentPlayerScoreText;
-    public TextMeshProUGUI currentPlayerWaste;
+    public TextMeshProUGUI playerOneScoreText;
+    public TextMeshProUGUI playerTwoScoreText;
+    public TextMeshProUGUI playerThreeScoreText;
+    public TextMeshProUGUI playerFourScoreText;
+    public TextMeshProUGUI playerOneWaste;
+    public TextMeshProUGUI playerTwoWaste;
+    public TextMeshProUGUI playerThreeWaste;
+    public TextMeshProUGUI playerFourWaste;
     public Transform fosforBar;
     public float fosforAmmount;
     public GameObject currentCard;
+    public int bugCount;
 
     public class Player
     {
@@ -40,9 +47,15 @@ public class GameManager : MonoBehaviour
         {
             currentCard = GameObject.FindGameObjectWithTag("Card");
         }
-        currentPlayerText.text = "Player " + currentPlayer;
-        currentPlayerScoreText.text = players[currentPlayer-1].score.ToString();
-        currentPlayerWaste.text = players[currentPlayer - 1].waste.ToString();
+        currentPlayerText.text = "Vuorossa Pelaaja " + currentPlayer;
+        playerOneScoreText.text = players[0].score.ToString();
+        playerTwoScoreText.text = players[1].score.ToString();
+        playerThreeScoreText.text = players[2].score.ToString();
+        playerFourScoreText.text = players[3].score.ToString();
+        playerOneWaste.text = players[0].waste.ToString();
+        playerTwoWaste.text = players[1].waste.ToString();
+        playerThreeWaste.text = players[2].waste.ToString();
+        playerFourWaste.text = players[3].waste.ToString();
 
     }
 
@@ -53,10 +66,10 @@ public class GameManager : MonoBehaviour
 
     public void UpdateWaste(int newWaste)
     {
-        if ((players[currentPlayer - 1].waste += newWaste) < 0)
+        if ((players[currentPlayer - 1].waste += (newWaste/2)) < 0)
             players[currentPlayer - 1].waste = 0;
         else
-        players[currentPlayer - 1].waste += newWaste;
+        players[currentPlayer - 1].waste += (newWaste/2);
     }
 
     public void UpdateFosfor(float newFosforCount)
@@ -85,11 +98,16 @@ public class GameManager : MonoBehaviour
             currentPlayer = 1;
         }
         Destroy(currentCard);
+        bugCount = 0;
     }
 
     public void DestroyCurrentCard()
     {
+        if(currentCard.GetComponent<CardManager>().cardType == CardManager.TypeOfCard.QUESTION)
+            bugCount++;
+
         Destroy(currentCard);
+
     }
 
 }

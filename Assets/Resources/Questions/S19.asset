@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8391c7fbf5719fc47990693ab3fb904b, type: 3}
+  m_Name: S19
+  m_EditorClassIdentifier: 
+  Question: "Haluaisit l\xE4hte\xE4 vaeltamaan ja toteuttaa vaellusreissusi mahdollisimman
+    kest\xE4v\xE4sti. Et ole viel\xE4 tehnyt juurikaan suunnitelmia, ja mietit, mik\xE4
+    olisi luonnon kannalta paras ajankohta ja toteutustapa vaelluksellesi."
+  OptionOneText: "Vaellus kes\xE4ll\xE4 k\xE4vellen"
+  OptionTwoText: "Vaellus talvella hiiht\xE4en"
+  OptionThreeText: 
+  CorrectAnswer: 2
+  Reasoning: "Tallaus kuluttaa maaper\xE4\xE4 erityisesti herkill\xE4 j\xE4k\xE4l\xE4valtaisilla
+    kankailla ja m\xE4riss\xE4 ymp\xE4rist\xF6iss\xE4, kuten soilla. Talvisin lumipeite
+    suojaa kasvistoa tallaukselta, jolloin hiihtovaelluksen vaikutukset ymp\xE4rist\xF6\xF6n
+    ovat kes\xE4vaellukseen verrattuna v\xE4h\xE4ist\xE4."

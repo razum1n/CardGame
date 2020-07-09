@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8391c7fbf5719fc47990693ab3fb904b, type: 3}
+  m_Name: S16
+  m_EditorClassIdentifier: 
+  Question: "Olet yritt\xE4j\xE4n\xE4 asentamassa liikkeesi wc-tiloihin mahdollisimman
+    ymp\xE4rist\xF6yst\xE4v\xE4llist\xE4 k\xE4sienkuivausv\xE4linett\xE4. Valitsetko
+    puuvillapyyherullan vai k\xE4sipaperit?"
+  OptionOneText: Puuvillapyyherulla
+  OptionTwoText: "K\xE4sipaperit"
+  OptionThreeText: 
+  CorrectAnswer: 1
+  Reasoning: "Puuvillapyyherulla on parempi vaihtoehto niin energiank\xE4yt\xF6n
+    kuin j\xE4tem\xE4\xE4r\xE4n puolesta."

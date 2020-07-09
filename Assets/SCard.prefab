@@ -947,7 +947,8 @@ MonoBehaviour:
   cardFalse: {fileID: 304104960}
   gameManager: {fileID: 0}
   score: 5
-  waste: 5
+  waste: 1
+  price: 0
   fosforPrice: 0.2
 --- !u!1 &2338127386319649747
 GameObject:

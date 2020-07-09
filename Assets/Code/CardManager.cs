@@ -29,6 +29,8 @@ public class CardManager : MonoBehaviour
 
     public int waste;
 
+    public int price;
+
     public float fosforPrice;
 
     private int answer;
@@ -85,20 +87,38 @@ public class CardManager : MonoBehaviour
 
     void Answer()
     {
-        if(answer == cardAsset.CorrectAnswer)
+        if(cardType == TypeOfCard.QUESTION)
         {
-            cardFace.SetActive(false);
-            cardCorrect.SetActive(true);
-            gameManager.UpdateScore(score);
-            gameManager.UpdateFosfor(fosforPrice);
-            gameManager.UpdateWaste(-waste);
+            if (answer == cardAsset.CorrectAnswer)
+            {
+                cardFace.SetActive(false);
+                cardCorrect.SetActive(true);
+                gameManager.UpdateScore(score);
+                gameManager.UpdateFosfor(fosforPrice);
+            }
+            else if (answer != cardAsset.CorrectAnswer)
+            {
+                cardFace.SetActive(false);
+                cardFalse.SetActive(true);
+                gameManager.UpdateWaste(waste);
+            }
+
         }
-        else if (answer != cardAsset.CorrectAnswer)
+        else
         {
-            cardFace.SetActive(false);
-            cardFalse.SetActive(true);
-            gameManager.UpdateFosfor(-fosforPrice);
-            gameManager.UpdateWaste(waste);
+            if (answer == cardAsset.CorrectAnswer)
+            {
+                cardFace.SetActive(false);
+                cardCorrect.SetActive(true);
+                gameManager.UpdateScore(score);
+                gameManager.UpdateWaste(-waste);
+            }
+            else if (answer != cardAsset.CorrectAnswer)
+            {
+                cardFace.SetActive(false);
+                cardFalse.SetActive(true);
+                gameManager.UpdateFosfor(-fosforPrice);
+            }
         }
     }
 }

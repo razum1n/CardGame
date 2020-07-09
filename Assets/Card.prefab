@@ -1914,7 +1914,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardType: 1
-  cardAsset: {fileID: 11400000, guid: 71f4f3bc009cc71409e5f51a9b408bbd, type: 2}
+  cardAsset: {fileID: 11400000, guid: 2c8cb607b946aef408c5cb9da74bc851, type: 2}
   question: {fileID: 9008511936361015666}
   answerOne: {fileID: 777535657}
   answerTwo: {fileID: 710080488}
@@ -1925,7 +1925,9 @@ MonoBehaviour:
   cardCorrect: {fileID: 1746193597}
   cardFalse: {fileID: 1689688067}
   gameManager: {fileID: 0}
-  score: 5
+  score: 7
+  waste: 5
+  price: 0
   fosforPrice: 0.2
 --- !u!114 &2043358185
 MonoBehaviour:
