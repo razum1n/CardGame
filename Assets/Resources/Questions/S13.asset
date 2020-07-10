@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: S13
   m_EditorClassIdentifier: 
   Question: "Olet suunnitellut valmistavasi kalaruokaa p\xE4iv\xE4lliseksi. Haluaisit
-    tehd\xE4 kest\xE4vi\xE4 valintoja, ja mietit, tulisiko sinun valita ennemmin
-    kirjolohifilett\xE4 vai kalamureketta?"
-  OptionOneText: kirjolohifile
-  OptionTwoText: kalamureke
+    tehd\xE4 kest\xE4vi\xE4 valintoja, ja mietit, kumpi olisi parempi vaihtoehto?"
+  OptionOneText: kasvatettu kirjolohifile
+  OptionTwoText: "s\xE4rkikalasta tehty mureke"
   OptionThreeText: 
   CorrectAnswer: 2
   Reasoning: "Kalamureke voidaan valmistetaan kalan v\xE4hempiarvoisista osista,

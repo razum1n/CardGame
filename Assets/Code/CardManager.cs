@@ -35,10 +35,10 @@ public class CardManager : MonoBehaviour
 
     private int answer;
 
-    // Start is called before the first frame update
-    void Awake()
+
+    private void Start()
     {
-        ReadCardInfo();
+
     }
 
     public void ReadCardInfo()
@@ -71,18 +71,21 @@ public class CardManager : MonoBehaviour
     {
         answer = 1;
         Answer();
+        answer = 0;
     }
 
     public void OptionTwo()
     {
         answer = 2;
         Answer();
+        answer = 0;
     }
 
     public void OptionThree()
     {
         answer = 3;
         Answer();
+        answer = 0;
     }
 
     void Answer()
@@ -120,5 +123,12 @@ public class CardManager : MonoBehaviour
                 gameManager.UpdateFosfor(-fosforPrice);
             }
         }
+    }
+
+    public void CardReset()
+    {
+        cardFace.SetActive(true);
+        cardCorrect.SetActive(false);
+        cardFalse.SetActive(false);
     }
 }

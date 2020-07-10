@@ -1914,7 +1914,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardType: 1
-  cardAsset: {fileID: 11400000, guid: 2c8cb607b946aef408c5cb9da74bc851, type: 2}
+  cardAsset: {fileID: 0}
   question: {fileID: 9008511936361015666}
   answerOne: {fileID: 777535657}
   answerTwo: {fileID: 710080488}

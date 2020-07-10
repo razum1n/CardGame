@@ -39,23 +39,17 @@ public class QDeck : MonoBehaviour
         if(deckType == TypeOfDeck.QUESTION)
         {
             if(gameManager.bugCount < 1)
-             {
+            {
                 if ((gameManager.players[gameManager.currentPlayer - 1].score >= price) && (cardNumber < deckOfCards.Count))
                 {
                     gameManager.players[gameManager.currentPlayer - 1].score -= price;
                     Spawning();
                 }
-                else
-                {
-                    Spawning();
-                }
-
-             }
+            }
             else
             {
                 Spawning();
             }
-
 
         }
         else

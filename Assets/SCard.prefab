@@ -935,7 +935,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardType: 0
-  cardAsset: {fileID: 11400000, guid: 8338db1b7790ebd419cc644f33c0a6ef, type: 2}
+  cardAsset: {fileID: 11400000, guid: 3cdf7de0b9ff18342bd3ce68359d4b91, type: 2}
   question: {fileID: 2338127386542989716}
   answerOne: {fileID: 2338127386605412318}
   answerTwo: {fileID: 2338127385412182315}
@@ -947,7 +947,7 @@ MonoBehaviour:
   cardFalse: {fileID: 304104960}
   gameManager: {fileID: 0}
   score: 5
-  waste: 1
+  waste: 4
   price: 0
   fosforPrice: 0.2
 --- !u!1 &2338127386319649747

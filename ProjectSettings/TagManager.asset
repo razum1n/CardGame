@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Card
   - Gamemanager
+  - PlayerPanel
+  - PlayerScore
+  - PlayerWaste
   layers:
   - Default
   - TransparentFX

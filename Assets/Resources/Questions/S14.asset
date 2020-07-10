@@ -18,4 +18,6 @@ MonoBehaviour:
   OptionTwoText: talvella
   OptionThreeText: 
   CorrectAnswer: 2
-  Reasoning: ???
+  Reasoning: "Puut ovat talvisin levossa, jolloin puun laatu on kuivempi ja n\xE4in
+    parempi. Lis\xE4ksi maa on j\xE4\xE4ss\xE4 talvisin, jolloin maaper\xE4\xE4n
+    ei kohdistu isoja haittoja."
