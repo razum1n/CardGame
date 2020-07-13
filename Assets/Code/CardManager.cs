@@ -23,8 +23,6 @@ public class CardManager : MonoBehaviour
     public GameObject cardCorrect;
     public GameObject cardFalse;
 
-    public GameManager gameManager;
-
     public int score;
 
     public int waste;
@@ -35,10 +33,16 @@ public class CardManager : MonoBehaviour
 
     private int answer;
 
-
-    private void Start()
+    private void Awake()
     {
-
+        if (cardType == TypeOfCard.QUESTION)
+        {
+            GameManager.Instance.qCard = this.gameObject;
+        }
+        else if (cardType == TypeOfCard.SKENARIO)
+        {
+            GameManager.Instance.sCard = this.gameObject;
+        }
     }
 
     public void ReadCardInfo()
@@ -59,12 +63,6 @@ public class CardManager : MonoBehaviour
             wrongInfo.text = cardAsset.Reasoning;
         }
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void OptionOne()
@@ -96,14 +94,14 @@ public class CardManager : MonoBehaviour
             {
                 cardFace.SetActive(false);
                 cardCorrect.SetActive(true);
-                gameManager.UpdateScore(score);
-                gameManager.UpdateFosfor(fosforPrice);
+                GameManager.Instance.UpdateScore(score);
+                GameManager.Instance.uiManager.UpdateFosfor(fosforPrice);
             }
             else if (answer != cardAsset.CorrectAnswer)
             {
                 cardFace.SetActive(false);
                 cardFalse.SetActive(true);
-                gameManager.UpdateWaste(waste);
+                GameManager.Instance.UpdateWaste(waste);
             }
 
         }
@@ -113,14 +111,14 @@ public class CardManager : MonoBehaviour
             {
                 cardFace.SetActive(false);
                 cardCorrect.SetActive(true);
-                gameManager.UpdateScore(score);
-                gameManager.UpdateWaste(-waste);
+                GameManager.Instance.UpdateScore(score);
+                GameManager.Instance.UpdateWaste(-waste);
+                GameManager.Instance.uiManager.UpdateFosfor(fosforPrice);
             }
             else if (answer != cardAsset.CorrectAnswer)
             {
                 cardFace.SetActive(false);
                 cardFalse.SetActive(true);
-                gameManager.UpdateFosfor(-fosforPrice);
             }
         }
     }

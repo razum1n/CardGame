@@ -5,7 +5,7 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public TextMeshProUGUI currentPlayerText;
+    
     public GameObject[] listOfPlayerScoreUi;
     public GameObject[] listOfPlayerWasteUi;
     public UiScript uiManager;
@@ -13,36 +13,50 @@ public class GameManager : MonoBehaviour
     public float fosforAmmount;
     public GameObject qCard;
     public GameObject sCard;
-    public int bugCount;
+    
 
     public class Player
     {
         public int score;
         public int waste;
+        public bool scenarioCardDrawn = false;
+        public bool questionCardDrawn = false; // checks weather the player has drawn a specific card this turn.
 
     }
 
     public Player[] players;
     public int numberOfPlayers;
 
-    public int currentPlayer = 1;
+    public static GameManager Instance { get; private set; }
 
-    // Start is called before the first frame update
-    void Start()
+    public int currentPlayer = 0;
+    void Awake()
+    {
+        if (Instance == null) { Instance = this; } else { Debug.Log("Warning: multiple " + this + " in scene!"); }
+        DontDestroyOnLoad(this.gameObject);
+    }
+
+    public bool HasPlayerDrawnSkenario()
+    {
+        return players[currentPlayer - 1].scenarioCardDrawn;
+    }
+
+    public bool HasPlayerDrawnQuestion()
+    {
+        return players[currentPlayer - 1].questionCardDrawn;
+    }
+
+    public void GameStart()
     {
         uiManager.CreatePlayerUi();
         players = new Player[numberOfPlayers];
-        for(int i=0;i<numberOfPlayers;i++)
+        for (int i = 0; i < numberOfPlayers; i++)
         {
             players[i] = new Player();
         }
         FindPlayerUi();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        currentPlayerText.text = "Vuorossa Pelaaja " + currentPlayer;
+        qCard.SetActive(false);
+        sCard.SetActive(false);
     }
 
     void FindPlayerUi()
@@ -51,7 +65,7 @@ public class GameManager : MonoBehaviour
         listOfPlayerWasteUi = GameObject.FindGameObjectsWithTag("PlayerWaste");
     }
 
-    void UpdateUi()
+    public void UpdateUi()
     {
         for(int i=0;i<numberOfPlayers;i++)
         {
@@ -77,48 +91,6 @@ public class GameManager : MonoBehaviour
         UpdateUi();
     }
 
-    public void UpdateFosfor(float newFosforCount)
-    {
-        fosforAmmount += newFosforCount;
-        if (fosforAmmount > 1)
-            fosforAmmount = 1;
-        else if (fosforAmmount < 0.0)
-            fosforAmmount = 0;
-        ChangeFosforLevel(fosforAmmount);
-        UpdateUi();
-    }
 
-    public void ChangeFosforLevel(float sizeNormalized)
-    {
-        fosforBar.localScale = new Vector3(sizeNormalized, 1f);
-    }
-
-    public void NextPlayer()
-    {
-        if(currentPlayer < numberOfPlayers)
-        {
-            currentPlayer++;
-        }
-        else
-        {
-            currentPlayer = 1;
-        }
-        sCard.SetActive(false);
-        qCard.SetActive(false);
-        sCard.GetComponent<CardManager>().CardReset();
-        qCard.GetComponent<CardManager>().CardReset();
-        bugCount = 0;
-    }
-
-    public void DestroyCurrentCard()
-    {
-        if (qCard.activeSelf)
-            bugCount++;
-        qCard.SetActive(false);
-        sCard.SetActive(false);
-        sCard.GetComponent<CardManager>().CardReset();
-        qCard.GetComponent<CardManager>().CardReset();
-
-    }
 
 }

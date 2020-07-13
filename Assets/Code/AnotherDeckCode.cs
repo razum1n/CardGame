@@ -8,10 +8,13 @@ public class AnotherDeckCode : MonoBehaviour
     public enum TypeOfDeck { SKENARIO, QUESTION };
     public TypeOfDeck deckType;
 
+    public UiScript ui;
+
     public GameObject card;
-    public List<CardAsset> cardTemplates = new List<CardAsset>();
     public GameObject spawnPoint;
-    public GameManager gameManager;
+
+    public List<CardAsset> cardTemplates = new List<CardAsset>();
+
     public int price;
     private int questionNumber = 1;
     public int cardCount = 0;
@@ -38,27 +41,43 @@ public class AnotherDeckCode : MonoBehaviour
         questionNumber = questionNumber + 1;
     }
 
-
+    public void TryDrawing()
+    {
+        if(deckType == TypeOfDeck.SKENARIO && card.GetComponent<CardManager>().cardType == CardManager.TypeOfCard.SKENARIO && GameManager.Instance.HasPlayerDrawnSkenario())
+        {
+            Debug.Log("Card Already Drawn");
+        }
+        else if(deckType == TypeOfDeck.QUESTION && card.GetComponent<CardManager>().cardType == CardManager.TypeOfCard.QUESTION && GameManager.Instance.HasPlayerDrawnQuestion())
+        {
+            Debug.Log("Card Already Drawn");
+        }
+        else
+        {
+            SpawnCard();
+        }
+    }
     public void SpawnCard()
     {
         if (deckType == TypeOfDeck.QUESTION)
         {
-            if (gameManager.bugCount < 1)
+            if (ui.bugCount < 1)
             {
-                if ((gameManager.players[gameManager.currentPlayer - 1].score >= price) && (cardCount < cardTemplates.Count))
+                if ((GameManager.Instance.players[GameManager.Instance.currentPlayer - 1].score >= price) && (cardCount < cardTemplates.Count))
                 {
                     card.SetActive(true);
-                    gameManager.sCard.SetActive(false);
+                    GameManager.Instance.sCard.SetActive(false);
+                    GameManager.Instance.players[GameManager.Instance.currentPlayer - 1].questionCardDrawn = true;
                     card.GetComponent<CardManager>().cardAsset = cardTemplates[cardCount];
                     card.GetComponent<CardManager>().ReadCardInfo();
                     cardCount++;
-                    gameManager.players[gameManager.currentPlayer - 1].score -= price;
+                    GameManager.Instance.players[GameManager.Instance.currentPlayer - 1].score -= price;
                 }
             }
             else
             {
                 card.SetActive(true);
-                gameManager.sCard.SetActive(false);
+                GameManager.Instance.players[GameManager.Instance.currentPlayer - 1].questionCardDrawn = true;
+                GameManager.Instance.sCard.SetActive(false);
                 card.GetComponent<CardManager>().cardAsset = cardTemplates[cardCount];
                 card.GetComponent<CardManager>().ReadCardInfo();
                 cardCount++;
@@ -69,6 +88,7 @@ public class AnotherDeckCode : MonoBehaviour
             if (cardCount < cardTemplates.Count)
             {
                 card.SetActive(true);
+                GameManager.Instance.players[GameManager.Instance.currentPlayer - 1].questionCardDrawn = true;
                 card.GetComponent<CardManager>().cardAsset = cardTemplates[cardCount];
                 card.GetComponent<CardManager>().ReadCardInfo();
                 cardCount++;
@@ -79,17 +99,12 @@ public class AnotherDeckCode : MonoBehaviour
             if (cardCount < cardTemplates.Count)
             {
                 card.SetActive(true);
-                gameManager.qCard.SetActive(false);
+                GameManager.Instance.qCard.SetActive(false);
+                GameManager.Instance.players[GameManager.Instance.currentPlayer - 1].scenarioCardDrawn = true;
                 card.GetComponent<CardManager>().cardAsset = cardTemplates[cardCount];
                 card.GetComponent<CardManager>().ReadCardInfo();
                 cardCount++;
             }
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }

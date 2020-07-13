@@ -9,6 +9,8 @@ TagManager:
   - PlayerPanel
   - PlayerScore
   - PlayerWaste
+  - QCard
+  - SCard
   layers:
   - Default
   - TransparentFX

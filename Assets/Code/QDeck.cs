@@ -12,7 +12,8 @@ public class QDeck : MonoBehaviour
     public GameObject cardInPlay;
     public List<GameObject> deckOfCards = new List<GameObject>();
     public GameObject spawnPoint;
-    public GameManager gameManager;
+    public UiScript ui;
+
     public int price;
     private int questionNumber = 0;
     public int cardNumber = 0;
@@ -38,11 +39,11 @@ public class QDeck : MonoBehaviour
     {
         if(deckType == TypeOfDeck.QUESTION)
         {
-            if(gameManager.bugCount < 1)
+            if(ui.bugCount < 1)
             {
-                if ((gameManager.players[gameManager.currentPlayer - 1].score >= price) && (cardNumber < deckOfCards.Count))
+                if ((GameManager.Instance.players[GameManager.Instance.currentPlayer - 1].score >= price) && (cardNumber < deckOfCards.Count))
                 {
-                    gameManager.players[gameManager.currentPlayer - 1].score -= price;
+                    GameManager.Instance.players[GameManager.Instance.currentPlayer - 1].score -= price;
                     Spawning();
                 }
             }
@@ -80,7 +81,6 @@ public class QDeck : MonoBehaviour
                 deckOfCards[cardNumber].GetComponent<CardManager>().cardAsset = Resources.Load<CardAsset>("Questions/S" + questionNumber.ToString());
                 deckOfCards.RemoveAt(cardNumber);
             }
-            cardInPlay.GetComponent<CardManager>().gameManager = GameObject.FindGameObjectWithTag("Gamemanager").GetComponent<GameManager>();
             questionNumber += 1;
             cardNumber = cardNumber - 1;
         }
