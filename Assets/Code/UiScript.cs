@@ -6,6 +6,7 @@ using TMPro;
 public class UiScript : MonoBehaviour
 {
     public GameObject playerPanel;
+    public TextMeshProUGUI[] playerTexts;
     public GameObject sCard;
     public GameObject qCard;
 
@@ -21,6 +22,7 @@ public class UiScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerTexts = new TextMeshProUGUI[GameManager.Instance.numberOfPlayers];
         GameManager.Instance.uiManager = this;
         GameManager.Instance.GameStart();
         ChangeFosforLevel(fosforAmmount);
@@ -29,7 +31,12 @@ public class UiScript : MonoBehaviour
     public void CreatePlayerUi()
     {
         for (int i = 0; i < GameManager.Instance.numberOfPlayers; i++)
+        {
+            playerTexts[i] = playerPanel.GetComponentInChildren<TextMeshProUGUI>();
+            playerTexts[i].text = "Pelaaja " + (i + 1).ToString();
             Instantiate(playerPanel, spawnPoint);
+        }
+        
     }
 
     public void UpdateFosfor(float newFosforCount)
