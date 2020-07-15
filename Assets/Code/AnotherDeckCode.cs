@@ -26,9 +26,9 @@ public class AnotherDeckCode : MonoBehaviour
         for(int i = 0;i<cardTemplates.Count;i++)
         {
             if(deckType == TypeOfDeck.QUESTION)
-                cardTemplates[i] = Resources.Load<CardAsset>("Questions/Q" + (i + 1).ToString());
+                cardTemplates[i] = Resources.Load<CardAsset>("Questions/Questions/Q" + (i + 1).ToString());
             else
-                cardTemplates[i] = Resources.Load<CardAsset>("Questions/S" + (i + 1).ToString());
+                cardTemplates[i] = Resources.Load<CardAsset>("Questions/Skenarios/S" + (i + 1).ToString());
         }
         for (int i = 0; i < cardTemplates.Count; i++)
         {
@@ -43,17 +43,27 @@ public class AnotherDeckCode : MonoBehaviour
 
     public void TryDrawing()
     {
-        if(deckType == TypeOfDeck.SKENARIO && card.GetComponent<CardManager>().cardType == CardManager.TypeOfCard.SKENARIO && GameManager.Instance.HasPlayerDrawnSkenario())
+        if (deckType == TypeOfDeck.SKENARIO && card.GetComponent<CardManager>().cardType == CardManager.TypeOfCard.SKENARIO)
         {
-            Debug.Log("Card Already Drawn");
-        }
-        else if(deckType == TypeOfDeck.QUESTION && card.GetComponent<CardManager>().cardType == CardManager.TypeOfCard.QUESTION && GameManager.Instance.HasPlayerDrawnQuestion())
-        {
-            Debug.Log("Card Already Drawn");
+            if(GameManager.Instance.HasPlayerDrawnSkenario())
+            {
+                Debug.Log("Card Already Drawn");
+            }
+            else
+            {
+                SpawnCard();
+            }
         }
         else
         {
-            SpawnCard();
+            if (GameManager.Instance.HasPlayerDrawnQuestion() || (GameManager.Instance.players[GameManager.Instance.currentPlayer - 1].correctAnswer == false))
+            {
+                Debug.Log("Card Already Drawn or skenario card not correct");
+            }
+            else
+            {
+                SpawnCard();
+            }
         }
     }
     public void SpawnCard()

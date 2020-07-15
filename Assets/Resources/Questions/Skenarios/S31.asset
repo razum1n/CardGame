@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8391c7fbf5719fc47990693ab3fb904b, type: 3}
+  m_Name: S31
+  m_EditorClassIdentifier: 
+  Question: "Onko v\xE4ite tosi vai ep\xE4tosi: Suomen mets\xE4t eiv\xE4t ole hiilinielu,
+    koska niiden pinta-ala rakentamisen vuoksi v\xE4henee koko ajan."
+  OptionOneText: Tosi
+  OptionTwoText: "Ep\xE4tosi"
+  OptionThreeText: 
+  CorrectAnswer: 2
+  Reasoning: "Suomessa istutetaan mets\xE4\xE4 ja kasvava puusto sitoo hiilt\xE4
+    ilmakeh\xE4st\xE4. Metsien kokonaispinta-ala  on muuttunut v\xE4h\xE4n viimeisen
+    60 vuoden aikana."

@@ -10,7 +10,10 @@ public class MainMenu : MonoBehaviour
 
     public int numberOfPlayersSelected = 2;
 
-    public Dropdown dropdown; 
+    public Dropdown dropdown;
+    public GameObject mainMenu;
+    public GameObject infoMenu;
+    public GameObject rulesMenu;
 
     // Start is called before the first frame update
     void Start()
@@ -51,5 +54,26 @@ public class MainMenu : MonoBehaviour
     private void OnDestroy()
     {
         dropdown.onValueChanged.RemoveAllListeners();
+    }
+
+    public void Back()
+    {
+        infoMenu.SetActive(false);
+        rulesMenu.SetActive(false);
+        mainMenu.SetActive(true);
+    }
+
+    public void Rules()
+    {
+        infoMenu.SetActive(false);
+        mainMenu.SetActive(false);
+        rulesMenu.SetActive(true);
+    }
+
+    public void Info()
+    {
+        infoMenu.SetActive(true);
+        mainMenu.SetActive(false);
+        rulesMenu.SetActive(false);
     }
 }

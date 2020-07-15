@@ -33,6 +33,8 @@ public class CardManager : MonoBehaviour
 
     private int answer;
 
+    public int correctAnswer;
+
     private void Awake()
     {
         if (cardType == TypeOfCard.QUESTION)
@@ -53,6 +55,23 @@ public class CardManager : MonoBehaviour
             answerOne.text = cardAsset.OptionOneText;
             answerTwo.text = cardAsset.OptionTwoText;
             answerThree.text = cardAsset.OptionThreeText;
+            correctAnswer = cardAsset.CorrectAnswer;
+
+            if (correctAnswer == 1)
+            {
+                correctInfo.text = cardAsset.OptionOneText;
+                wrongInfo.text = cardAsset.OptionOneText;
+            }
+            else if (correctAnswer == 2)
+            {
+                correctInfo.text = cardAsset.OptionTwoText;
+                wrongInfo.text = cardAsset.OptionTwoText;
+            }
+            else if (correctAnswer == 3)
+            {
+                correctInfo.text = cardAsset.OptionThreeText;
+                wrongInfo.text = cardAsset.OptionThreeText;
+            }
         }
         else if(cardType == TypeOfCard.SKENARIO)
         {
@@ -114,6 +133,7 @@ public class CardManager : MonoBehaviour
                 GameManager.Instance.UpdateScore(score);
                 GameManager.Instance.UpdateWaste(-waste);
                 GameManager.Instance.uiManager.UpdateFosfor(fosforPrice);
+                GameManager.Instance.players[GameManager.Instance.currentPlayer - 1].correctAnswer = true;
             }
             else if (answer != cardAsset.CorrectAnswer)
             {

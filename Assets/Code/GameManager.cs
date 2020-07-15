@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
         public int waste;
         public bool scenarioCardDrawn = false;
         public bool questionCardDrawn = false; // checks weather the player has drawn a specific card this turn.
+        public bool correctAnswer = false;
 
     }
 
@@ -91,6 +92,12 @@ public class GameManager : MonoBehaviour
         UpdateUi();
     }
 
-
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+    }
 
 }

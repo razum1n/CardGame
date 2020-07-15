@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8391c7fbf5719fc47990693ab3fb904b, type: 3}
+  m_Name: S2
+  m_EditorClassIdentifier: 
+  Question: "Olet pesem\xE4ss\xE4 pyykki\xE4 j\xE4rven rannalla m\xF6kill\xE4, joka
+    ei ole liitettyn\xE4 viem\xE4riverkkoon. Miten sinun tulisi menetell\xE4 pesuvesien
+    kanssa?"
+  OptionOneText: kaadat pesuvedet maahan
+  OptionTwoText: "kaadat pesuvedet j\xE4rveen"
+  OptionThreeText: 
+  CorrectAnswer: 1
+  Reasoning: "Pestess\xE4 pyykki\xE4 rannalla tai m\xF6kill\xE4 on varmistettava,
+    etteiv\xE4t pesuvedet mene suoraan vesist\xF6\xF6n. Niit\xE4 ei siis saa kaataa
+    mereen tai j\xE4rveen, ja ne tulisi my\xF6s kaataa mahdollisimman kauas rannasta."

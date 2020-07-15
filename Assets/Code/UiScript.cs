@@ -58,6 +58,7 @@ public class UiScript : MonoBehaviour
     {
         GameManager.Instance.players[GameManager.Instance.currentPlayer -1].questionCardDrawn = false;
         GameManager.Instance.players[GameManager.Instance.currentPlayer -1].scenarioCardDrawn = false;
+        GameManager.Instance.players[GameManager.Instance.currentPlayer - 1].correctAnswer = false;
         if (GameManager.Instance.currentPlayer < GameManager.Instance.numberOfPlayers)
         {
             GameManager.Instance.currentPlayer++;

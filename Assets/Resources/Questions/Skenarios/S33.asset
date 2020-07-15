@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8391c7fbf5719fc47990693ab3fb904b, type: 3}
+  m_Name: S33
+  m_EditorClassIdentifier: 
+  Question: "Mit\xE4 puutuotetehtaan sivuvirroille tulisi tehd\xE4?"
+  OptionOneText: "Ne poltetaan energiaksi tehtaan k\xE4ytt\xF6\xF6n."
+  OptionTwoText: "Ne hy\xF6dynnet\xE4\xE4n jalosteiden raaka-aineina."
+  OptionThreeText: 
+  CorrectAnswer: 2
+  Reasoning: "Kaskadi-periaatteen mukaisesti sivuvirrat tulisi hy\xF6dynt\xE4\xE4
+    korkeanjalostusasteen tuotteissa ja kierr\xE4tt\xE4\xE4 ja vasta viimeisen\xE4
+    ne hy\xF6dynnett\xE4isiin energiaksi."
