@@ -6,9 +6,14 @@ using TMPro;
 public class UiScript : MonoBehaviour
 {
     public GameObject playerPanel;
+
     public TextMeshProUGUI[] playerTexts;
+
     public GameObject sCard;
     public GameObject qCard;
+    public GameObject pauseMenu;
+
+    public bool pauseActive = false;
 
     public TextMeshProUGUI currentPlayerText;
 
@@ -28,6 +33,19 @@ public class UiScript : MonoBehaviour
         ChangeFosforLevel(fosforAmmount);
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            pauseActive = !pauseActive;
+        }
+
+        if (pauseActive)
+            pauseMenu.SetActive(true);
+        else
+            pauseMenu.SetActive(false);
+    }
+
     public void CreatePlayerUi()
     {
         for (int i = 0; i < GameManager.Instance.numberOfPlayers; i++)
@@ -37,6 +55,21 @@ public class UiScript : MonoBehaviour
             Instantiate(playerPanel, spawnPoint);
         }
         
+    }
+
+    public void Resume()
+    {
+        pauseActive = !pauseActive;
+    }
+
+    public void BackToMenu()
+    {
+        GameManager.Instance.LoadMainMenu();
+    }
+
+    public void PauseShutDown()
+    {
+        GameManager.Instance.ExitApplication();
     }
 
     public void UpdateFosfor(float newFosforCount)
@@ -58,7 +91,8 @@ public class UiScript : MonoBehaviour
     {
         GameManager.Instance.players[GameManager.Instance.currentPlayer -1].questionCardDrawn = false;
         GameManager.Instance.players[GameManager.Instance.currentPlayer -1].scenarioCardDrawn = false;
-        GameManager.Instance.players[GameManager.Instance.currentPlayer - 1].correctAnswer = false;
+        GameManager.Instance.players[GameManager.Instance.currentPlayer -1].correctAnswer = false;
+
         if (GameManager.Instance.currentPlayer < GameManager.Instance.numberOfPlayers)
         {
             GameManager.Instance.currentPlayer++;
@@ -86,4 +120,5 @@ public class UiScript : MonoBehaviour
         qCard.GetComponent<CardManager>().CardReset();
 
     }
+
 }

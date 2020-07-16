@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -92,12 +93,14 @@ public class GameManager : MonoBehaviour
         UpdateUi();
     }
 
-    void Update()
+    public void LoadMainMenu()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
+        SceneManager.LoadScene(0);
+    }
+
+    public void ExitApplication()
+    {
+        Application.Quit();
     }
 
 }
