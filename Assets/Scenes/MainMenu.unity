@@ -1247,15 +1247,16 @@ MonoBehaviour:
     ja fosfori. Ravinteiden kierto on luonnossa tasapainossa, mutta ihmisen vaikutuksesta
     typen ja fosforin kierto on pahasti h\xE4iriintynyt. \r\n\r\nKasvit ottavat ravinteita
     maaper\xE4st\xE4, jotka siirtyv\xE4t ihmiselle tai el\xE4imille n\xE4iden kuluttaessa
-    kasveja ravintonaan. Ravinteet palautuvat takaisin ymp\xE4rist\xF6\xF6n organismien
-    kuollessa ja ulosteen mukana. Mikro-organismit hajottavat t\xE4m\xE4n orgaanisen
-    aineksen maaper\xE4ss\xE4 ja palauttavat ravinteet  mineraaliseen muotoon, joita
-    kasvit voivat taas hy\xF6dynt\xE4\xE4.\r\n\nIhmisen vaikutus ravinteiden kiertoon
-    n\xE4kyy esimerkiksi vesist\xF6jen rehev\xF6itymisen\xE4. T\xE4ss\xE4 peliss\xE4
-    pelaajien tulisikin pyrki\xE4 toimimaan ravinnekierron kannalta mahdollisimman
-    kest\xE4v\xE4sti. Millaisia valintoja kannattaa arkiel\xE4m\xE4ss\xE4 tehd\xE4?
-    Ent\xE4 millaiset valinnat olisivat ammatinharjoittajan n\xE4k\xF6kulmasta ravinnekierron
-    ja ymp\xE4rist\xF6n kannalta kest\xE4v\xE4mpi\xE4? Pelaa ja ota selv\xE4\xE4!\n\n"
+    kasveja tai toisia el\xE4imi\xE4 ravintonaan. Ravinteet palautuvat takaisin ymp\xE4rist\xF6\xF6n
+    organismien kuollessa. Mikro-organismit hajottavat t\xE4m\xE4n orgaanisen aineksen
+    maaper\xE4ss\xE4 ja palauttavat ravinteet  mineraaliseen muotoon, joita kasvit
+    voivat taas hy\xF6dynt\xE4\xE4. \r\n\r\nIhmisen vaikutus ravinteiden kiertoon
+    n\xE4kyy esimerkiksi ravinnevalumien aiheuttamana vesist\xF6jen rehev\xF6itymisen\xE4.
+    T\xE4ss\xE4 peliss\xE4 pelaajien tulisikin pyrki\xE4 toimimaan ravinnekierron
+    kannalta mahdollisimman kest\xE4v\xE4sti. Millaisia valintoja kannattaa arkiel\xE4m\xE4ss\xE4
+    tehd\xE4? Ent\xE4 millaiset valinnat olisivat ammatinharjoittajan n\xE4k\xF6kulmasta
+    ravinnekierron ja ymp\xE4rist\xF6n kannalta kest\xE4v\xE4mpi\xE4? Pelaa ja ota
+    selv\xE4\xE4!\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2187,8 +2188,8 @@ RectTransform:
   m_Father: {fileID: 1571596313}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.18300001, y: 0.20170371}
-  m_AnchorMax: {x: 0.79648125, y: 0.84440756}
+  m_AnchorMin: {x: 0.15718655, y: 0.090888895}
+  m_AnchorMax: {x: 0.83500004, y: 0.91851854}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2211,10 +2212,20 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "2-4 pelaajaa. \r\n\nJokainen saa vuorollaan skenaariokortin, jos vastaa
-    oikein, saa mahdollisuuden ostaa kysymyskortin. \r\n\n*t\xE4h\xE4n pisteytyksen
-    kuvaus*\r\n\nPeli p\xE4\xE4ttyy kun ravinnetasoa kuvaava mittari on saavuttanut
-    huippunsa.\r\n"
+  m_text: "Peliss\xE4 on 2-4 pelaajaa. Jokainen saa vuorollaan skenaariokortin.\n
+    Skenaariokorteissa on esitetty tilanne, jolloin pelaajan tulee valita kahdesta
+    vaihtoehdosta kest\xE4v\xE4mpi vaihtoehto. Mukana on my\xF6s v\xE4itt\xE4mi\xE4,
+    jolloin pelaajan tulee pohtia, onko v\xE4ite tosi vai ep\xE4tosi. \n\nOikeasta
+    vastauksesta saa 2 pistett\xE4.\n \r\nMik\xE4li pelaaja vastaa skenaariokorttiin
+    oikein, saa h\xE4n mahdollisuuden nostaa my\xF6s kysymyskortin.\n\n Oikeasta
+    vastauksesta saa 5 pistett\xE4, v\xE4\xE4r\xE4st\xE4 vastauksesta taasen 4 j\xE4tepistett\xE4.\n\n
+    Mik\xE4li pelaaja seuraavilla kierroksilla vastaa skenaariokortteihin oikein,
+    v\xE4henev\xE4t h\xE4nen j\xE4tepisteens\xE4 kahdella pisteell\xE4. Joka kierroksella
+    on mahdollista nostaa vain yksi skenaario- ja kysymyskortti.\r\n\nPelin keston
+    m\xE4\xE4rittelee ravinnemittari. Jokaisesta oikeasta vastauksesta mittarin lukema
+    kasvaa. Peli p\xE4\xE4ttyy, kun ravinnemittari on saavuttanut huippunsa. Pelin
+    lopussa pelaajien pisteist\xE4 v\xE4hennet\xE4\xE4n heid\xE4n j\xE4tepisteens\xE4,
+    ja pelin voittajaksi selviytyy eniten pisteit\xE4 saanut pelaaja. \r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2242,7 +2253,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 50.4
+  m_fontSize: 30.05
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2283,12 +2294,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1226796813}
-    characterCount: 223
+    characterCount: 993
     spriteCount: 0
-    spaceCount: 30
-    wordCount: 25
+    spaceCount: 124
+    wordCount: 113
     linkCount: 0
-    lineCount: 12
+    lineCount: 25
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0

@@ -70,27 +70,16 @@ public class AnotherDeckCode : MonoBehaviour
     {
         if (deckType == TypeOfDeck.QUESTION)
         {
-            if (ui.bugCount < 1)
-            {
-                if ((GameManager.Instance.players[GameManager.Instance.currentPlayer - 1].score >= price) && (cardCount < cardTemplates.Count))
-                {
-                    card.SetActive(true);
-                    GameManager.Instance.sCard.SetActive(false);
-                    GameManager.Instance.players[GameManager.Instance.currentPlayer - 1].questionCardDrawn = true;
-                    card.GetComponent<CardManager>().cardAsset = cardTemplates[cardCount];
-                    card.GetComponent<CardManager>().ReadCardInfo();
-                    cardCount++;
-                    GameManager.Instance.players[GameManager.Instance.currentPlayer - 1].score -= price;
-                }
-            }
-            else
+
+            if ((GameManager.Instance.players[GameManager.Instance.currentPlayer - 1].score >= price) && (cardCount < cardTemplates.Count))
             {
                 card.SetActive(true);
-                GameManager.Instance.players[GameManager.Instance.currentPlayer - 1].questionCardDrawn = true;
                 GameManager.Instance.sCard.SetActive(false);
+                GameManager.Instance.players[GameManager.Instance.currentPlayer - 1].questionCardDrawn = true;
                 card.GetComponent<CardManager>().cardAsset = cardTemplates[cardCount];
                 card.GetComponent<CardManager>().ReadCardInfo();
                 cardCount++;
+                GameManager.Instance.players[GameManager.Instance.currentPlayer - 1].score -= price;
             }
         }
         else if(deckType == TypeOfDeck.QUESTION)

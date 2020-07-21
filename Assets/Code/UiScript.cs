@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class UiScript : MonoBehaviour
 {
@@ -12,17 +14,23 @@ public class UiScript : MonoBehaviour
     public GameObject sCard;
     public GameObject qCard;
     public GameObject pauseMenu;
+    public GameObject rulesMenu;
+    public UnityEngine.UI.Image fosforBarObject;
+    public TextMeshProUGUI pointsText;
+    public TextMeshProUGUI wasteText;
 
     public bool pauseActive = false;
+    public bool rulesActive = false;
+    public bool doublePoints = false;
 
     public TextMeshProUGUI currentPlayerText;
 
     public Transform spawnPoint;
     public Transform fosforBar;
 
-    public int bugCount;
+    public float fosforAmmount = 0;
 
-    public float fosforAmmount = 1;
+    private Color newColor = new Color(0.7169812f, 0.09807763f, 0.09807763f);
 
     // Start is called before the first frame update
     void Start()
@@ -38,12 +46,21 @@ public class UiScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             pauseActive = !pauseActive;
+            rulesActive = false;
         }
 
         if (pauseActive)
             pauseMenu.SetActive(true);
         else
             pauseMenu.SetActive(false);
+
+        if (rulesActive)
+            rulesMenu.SetActive(true);
+        else
+            rulesMenu.SetActive(false);
+
+        pointsText.text = qCard.GetComponent<CardManager>().score.ToString();
+        wasteText.text = qCard.GetComponent<CardManager>().waste.ToString();
     }
 
     public void CreatePlayerUi()
@@ -67,6 +84,11 @@ public class UiScript : MonoBehaviour
         GameManager.Instance.LoadMainMenu();
     }
 
+    public void Rules()
+    {
+        rulesActive = !rulesActive;
+    }
+
     public void PauseShutDown()
     {
         GameManager.Instance.ExitApplication();
@@ -85,6 +107,18 @@ public class UiScript : MonoBehaviour
     public void ChangeFosforLevel(float sizeNormalized)
     {
         fosforBar.localScale = new Vector3(sizeNormalized, 1f);
+        if (fosforAmmount < 0.5)
+            doublePoints = false;
+        else
+            doublePoints = true;
+
+        if (doublePoints)
+        {
+            qCard.GetComponent<CardManager>().waste = 6;
+            qCard.GetComponent<CardManager>().score = 6;
+            fosforBarObject.color = newColor;
+        }
+
     }
 
     public void NextPlayer()
@@ -104,7 +138,6 @@ public class UiScript : MonoBehaviour
 
         sCard.SetActive(false);
         qCard.SetActive(false);
-        bugCount = 0;
         sCard.GetComponent<CardManager>().CardReset();
         qCard.GetComponent<CardManager>().CardReset();
         currentPlayerText.text = "Vuorossa Pelaaja " + GameManager.Instance.currentPlayer;
@@ -112,13 +145,10 @@ public class UiScript : MonoBehaviour
 
     public void DestroyCurrentCard()
     {
-        if (qCard.activeSelf)
-            bugCount++;
         qCard.SetActive(false);
         sCard.SetActive(false);
         sCard.GetComponent<CardManager>().CardReset();
         qCard.GetComponent<CardManager>().CardReset();
-
     }
 
 }

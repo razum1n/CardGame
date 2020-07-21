@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8391c7fbf5719fc47990693ab3fb904b, type: 3}
   m_Name: Q7
   m_EditorClassIdentifier: 
-  Question: "Miss\xE4 kunnassa on Tunturij\xE4rven latukahvila?"
-  OptionOneText: A) Kolarissa
-  OptionTwoText: "B) Helsingiss\xE4"
-  OptionThreeText: C) Inarissa
-  CorrectAnswer: 1
+  Question: "Mik\xE4 seuraavista toimii luonnossa hajottajana?"
+  OptionOneText: "A) h\xE4m\xE4h\xE4kki"
+  OptionTwoText: B) rapu
+  OptionThreeText: "C) p\xE4\xE4st\xE4inen"
+  CorrectAnswer: 2
   Reasoning: 

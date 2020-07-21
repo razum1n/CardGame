@@ -86,10 +86,9 @@ public class GameManager : MonoBehaviour
 
     public void UpdateWaste(int newWaste)
     {
-        if ((players[currentPlayer - 1].waste += (newWaste/2)) < 0)
+        players[currentPlayer - 1].waste = players[currentPlayer - 1].waste + newWaste;
+        if (players[currentPlayer - 1].waste < 0)
             players[currentPlayer - 1].waste = 0;
-        else
-        players[currentPlayer - 1].waste += (newWaste/2);
         UpdateUi();
     }
 

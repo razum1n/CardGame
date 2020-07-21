@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8391c7fbf5719fc47990693ab3fb904b, type: 3}
   m_Name: S1
   m_EditorClassIdentifier: 
-  Question: "Olet rakentamassa saniteettitiloja vapaa-ajan asuntoon, ja pohdit ulkohuussin
+  Question: "Olet rakentamassa saniteettitiloja vapaa-ajan asuntoon, ja pohdit kuivak\xE4ym\xE4l\xE4n
     ja vesivessan v\xE4lill\xE4. Kumpi vaihtoehto on ymp\xE4rist\xF6lle kest\xE4v\xE4mpi?"
-  OptionOneText: Ulkohuussi
-  OptionTwoText: vesivessa
+  OptionOneText: "Kuivak\xE4ym\xE4l\xE4"
+  OptionTwoText: Vesivessa
   OptionThreeText: 
   CorrectAnswer: 1
-  Reasoning: "Ulkohuussin j\xE4tett\xE4 voi k\xE4ytt\xE4\xE4 lannoitteena, jolloin
-    ravinteet menev\xE4t suoraan uusiok\xE4ytt\xF6\xF6n. Vesivessan j\xE4tteet joudutaan
-    k\xE4sittelem\xE4\xE4n vedenpuhdistamolla."
+  Reasoning: "Kuivak\xE4ym\xE4l\xE4n j\xE4tett\xE4 voi k\xE4ytt\xE4\xE4 lannoitteena,
+    jolloin ravinteet menev\xE4t suoraan uusiok\xE4ytt\xF6\xF6n. Vesivessan j\xE4tteet
+    joudutaan k\xE4sittelem\xE4\xE4n vedenpuhdistamolla."
