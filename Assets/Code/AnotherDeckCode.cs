@@ -10,6 +10,8 @@ public class AnotherDeckCode : MonoBehaviour
 
     public UiScript ui;
 
+    public QuestionStealing steal;
+
     public GameObject card;
     public GameObject spawnPoint;
 
@@ -74,6 +76,7 @@ public class AnotherDeckCode : MonoBehaviour
             if ((GameManager.Instance.players[GameManager.Instance.currentPlayer - 1].score >= price) && (cardCount < cardTemplates.Count))
             {
                 card.SetActive(true);
+                steal.Timer();
                 GameManager.Instance.sCard.SetActive(false);
                 GameManager.Instance.players[GameManager.Instance.currentPlayer - 1].questionCardDrawn = true;
                 card.GetComponent<CardManager>().cardAsset = cardTemplates[cardCount];
@@ -87,6 +90,7 @@ public class AnotherDeckCode : MonoBehaviour
             if (cardCount < cardTemplates.Count)
             {
                 card.SetActive(true);
+                steal.Timer();
                 GameManager.Instance.players[GameManager.Instance.currentPlayer - 1].questionCardDrawn = true;
                 card.GetComponent<CardManager>().cardAsset = cardTemplates[cardCount];
                 card.GetComponent<CardManager>().ReadCardInfo();

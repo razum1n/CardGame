@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
         public bool scenarioCardDrawn = false;
         public bool questionCardDrawn = false; // checks weather the player has drawn a specific card this turn.
         public bool correctAnswer = false;
+        public string name;
 
     }
 
@@ -51,11 +52,6 @@ public class GameManager : MonoBehaviour
     public void GameStart()
     {
         uiManager.CreatePlayerUi();
-        players = new Player[numberOfPlayers];
-        for (int i = 0; i < numberOfPlayers; i++)
-        {
-            players[i] = new Player();
-        }
         FindPlayerUi();
         qCard.SetActive(false);
         sCard.SetActive(false);
@@ -67,6 +63,17 @@ public class GameManager : MonoBehaviour
         listOfPlayerWasteUi = GameObject.FindGameObjectsWithTag("PlayerWaste");
     }
 
+    public void CreatePlayers()
+    {
+        players = new Player[numberOfPlayers];
+
+        for (int i = 0; i < numberOfPlayers; i++)
+        {
+            players[i] = new Player();
+        }
+
+    }
+
     public void UpdateUi()
     {
         for(int i=0;i<numberOfPlayers;i++)
@@ -76,20 +83,40 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void UpdateScore(int newScore)
+    public void UpdateScore(int newScore, bool playerSteal = false, int playerNumber = 0)
     {
-        players[currentPlayer - 1].score += newScore;
-        if (players[currentPlayer - 1].score < 0)
-            players[currentPlayer - 1].score = 0;
-        UpdateUi();
+        if (!playerSteal)
+        {
+            players[currentPlayer - 1].score += newScore;
+            if (players[currentPlayer - 1].score < 0)
+                players[currentPlayer - 1].score = 0;
+            UpdateUi();
+        }
+        else if (playerSteal)
+        {
+            players[playerNumber].score += newScore;
+            if (players[playerNumber].score < 0)
+                players[playerNumber].score = 0;
+            UpdateUi();
+        }
     }
 
-    public void UpdateWaste(int newWaste)
+    public void UpdateWaste(int newWaste, bool playerSteal = false, int playerNumber = 0)
     {
-        players[currentPlayer - 1].waste = players[currentPlayer - 1].waste + newWaste;
-        if (players[currentPlayer - 1].waste < 0)
-            players[currentPlayer - 1].waste = 0;
-        UpdateUi();
+        if (!playerSteal)
+        {
+            players[currentPlayer - 1].waste = players[currentPlayer - 1].waste + newWaste;
+            if (players[currentPlayer - 1].waste < 0)
+                players[currentPlayer - 1].waste = 0;
+            UpdateUi();
+        }
+        else if (playerSteal)
+        {
+            players[playerNumber].waste = players[playerNumber].waste + newWaste;
+            if (players[playerNumber].waste < 0)
+                players[playerNumber].waste = 0;
+            UpdateUi();
+        }
     }
 
     public void LoadMainMenu()

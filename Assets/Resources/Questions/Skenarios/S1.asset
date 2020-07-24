@@ -18,6 +18,6 @@ MonoBehaviour:
   OptionTwoText: Vesivessa
   OptionThreeText: 
   CorrectAnswer: 1
-  Reasoning: "Kuivak\xE4ym\xE4l\xE4n j\xE4tett\xE4 voi k\xE4ytt\xE4\xE4 lannoitteena,
-    jolloin ravinteet menev\xE4t suoraan uusiok\xE4ytt\xF6\xF6n. Vesivessan j\xE4tteet
-    joudutaan k\xE4sittelem\xE4\xE4n vedenpuhdistamolla."
+  Reasoning: "Kuivak\xE4ym\xE4l\xE4n j\xE4tett\xE4 voi k\xE4ytt\xE4\xE4 kompostoinnin
+    j\xE4lkeen lannoitteena, jolloin ravinteet menev\xE4t suoraan uusiok\xE4ytt\xF6\xF6n.
+    Vesivessan j\xE4tteet joudutaan k\xE4sittelem\xE4\xE4n vedenpuhdistamolla."

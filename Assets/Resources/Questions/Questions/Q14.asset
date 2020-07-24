@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8391c7fbf5719fc47990693ab3fb904b, type: 3}
   m_Name: Q14
   m_EditorClassIdentifier: 
-  Question: "Kuinka monta viem\xE4riverkkoon liitt\xE4m\xE4t\xF6nt\xE4 kiinteist\xF6\xE4
-    Suomessa on arvioiden mukaan?"
-  OptionOneText: A) 150 000
-  OptionTwoText: B) 300 000
-  OptionThreeText: C) 450 000
-  CorrectAnswer: 2
+  Question: "Mill\xE4 nimell\xE4 syanobakteerit paremmin tunnetaan?"
+  OptionOneText: "A) sinilev\xE4"
+  OptionTwoText: B) kombu
+  OptionThreeText: C) superbakteeri
+  CorrectAnswer: 1
   Reasoning: 

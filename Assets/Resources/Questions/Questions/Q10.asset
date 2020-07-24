@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Q10
   m_EditorClassIdentifier: 
   Question: Kuinka montaa erilaista ravinnetta kasvit tarvitsevat kasvaakseen?
-  OptionOneText: A) 12
+  OptionOneText: A) 5
   OptionTwoText: B) 16
-  OptionThreeText: C) 24
+  OptionThreeText: C) 28
   CorrectAnswer: 2
   Reasoning: 

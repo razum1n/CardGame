@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Q6
   m_EditorClassIdentifier: 
   Question: Kuinka paljon Suomen kokonaispinta-alasta on suoalueita?
-  OptionOneText: A) 10%
+  OptionOneText: A) 5%
   OptionTwoText: B) 20%
-  OptionThreeText: C) 30%
+  OptionThreeText: C) 40%
   CorrectAnswer: 2
   Reasoning: 

@@ -12,6 +12,8 @@ public class CardManager : MonoBehaviour
 
     public CardAsset cardAsset;
 
+    public QuestionStealing stealing;
+
     public TextMeshProUGUI question;
     public TextMeshProUGUI answerOne;
     public TextMeshProUGUI answerTwo;
@@ -34,6 +36,10 @@ public class CardManager : MonoBehaviour
     private int answer;
 
     public int correctAnswer;
+
+    public bool questionStealing = false;
+
+    public int playerSteal;
 
     private void Awake()
     {
@@ -113,14 +119,16 @@ public class CardManager : MonoBehaviour
             {
                 cardFace.SetActive(false);
                 cardCorrect.SetActive(true);
-                GameManager.Instance.UpdateScore(score);
+                GameManager.Instance.UpdateScore(score, questionStealing,playerSteal);
                 GameManager.Instance.uiManager.UpdateFosfor(fosforPrice);
+                stealing.Pause();
             }
             else if (answer != cardAsset.CorrectAnswer)
             {
                 cardFace.SetActive(false);
                 cardFalse.SetActive(true);
-                GameManager.Instance.UpdateWaste(waste);
+                GameManager.Instance.UpdateWaste(waste, questionStealing, playerSteal);
+                stealing.Pause();
             }
 
         }

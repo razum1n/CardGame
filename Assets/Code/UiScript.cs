@@ -7,12 +7,15 @@ using UnityEngine.UI;
 
 public class UiScript : MonoBehaviour
 {
+    public QuestionStealing steal;
     public GameObject playerPanel;
+    public GameObject timerBar;
 
     public TextMeshProUGUI[] playerTexts;
 
     public GameObject sCard;
     public GameObject qCard;
+    public GameObject cardBG;
     public GameObject pauseMenu;
     public GameObject rulesMenu;
     public UnityEngine.UI.Image fosforBarObject;
@@ -30,7 +33,7 @@ public class UiScript : MonoBehaviour
 
     public float fosforAmmount = 0;
 
-    private Color newColor = new Color(0.7169812f, 0.09807763f, 0.09807763f);
+    private Color newColor = new Color(1f, 0f, 0f);
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +42,7 @@ public class UiScript : MonoBehaviour
         GameManager.Instance.uiManager = this;
         GameManager.Instance.GameStart();
         ChangeFosforLevel(fosforAmmount);
+        currentPlayerText.text = "Vuorossa " + GameManager.Instance.players[GameManager.Instance.currentPlayer-1].name;
     }
 
     private void Update()
@@ -61,6 +65,11 @@ public class UiScript : MonoBehaviour
 
         pointsText.text = qCard.GetComponent<CardManager>().score.ToString();
         wasteText.text = qCard.GetComponent<CardManager>().waste.ToString();
+
+        if (sCard.activeSelf || qCard.activeSelf)
+            cardBG.SetActive(true);
+        else
+            cardBG.SetActive(false);
     }
 
     public void CreatePlayerUi()
@@ -68,7 +77,7 @@ public class UiScript : MonoBehaviour
         for (int i = 0; i < GameManager.Instance.numberOfPlayers; i++)
         {
             playerTexts[i] = playerPanel.GetComponentInChildren<TextMeshProUGUI>();
-            playerTexts[i].text = "Pelaaja " + (i + 1).ToString();
+            playerTexts[i].text = GameManager.Instance.players[i].name;
             Instantiate(playerPanel, spawnPoint);
         }
         
@@ -126,6 +135,7 @@ public class UiScript : MonoBehaviour
         GameManager.Instance.players[GameManager.Instance.currentPlayer -1].questionCardDrawn = false;
         GameManager.Instance.players[GameManager.Instance.currentPlayer -1].scenarioCardDrawn = false;
         GameManager.Instance.players[GameManager.Instance.currentPlayer -1].correctAnswer = false;
+        steal.DeActivateQuestionStealing();
 
         if (GameManager.Instance.currentPlayer < GameManager.Instance.numberOfPlayers)
         {
@@ -140,7 +150,7 @@ public class UiScript : MonoBehaviour
         qCard.SetActive(false);
         sCard.GetComponent<CardManager>().CardReset();
         qCard.GetComponent<CardManager>().CardReset();
-        currentPlayerText.text = "Vuorossa Pelaaja " + GameManager.Instance.currentPlayer;
+        currentPlayerText.text = "Vuorossa " + GameManager.Instance.players[GameManager.Instance.currentPlayer-1].name;
     }
 
     public void DestroyCurrentCard()

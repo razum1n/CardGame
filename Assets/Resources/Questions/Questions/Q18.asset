@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8391c7fbf5719fc47990693ab3fb904b, type: 3}
   m_Name: Q18
   m_EditorClassIdentifier: 
-  Question: "Miten k\xE4ytt\xE4m\xE4tt\xE4 j\xE4\xE4neet l\xE4\xE4kkeet kierr\xE4tet\xE4\xE4n
-    oikein?"
-  OptionOneText: "A) laittamalla sekaj\xE4tteeseen"
-  OptionTwoText: B) palauttamalla apteekkiin
-  OptionThreeText: "C) lajittelemalla ongelmaj\xE4tteeseen"
+  Question: Miksi simpukoiden kasvatus ei ole taloudellisesti kannattavaa?
+  OptionOneText: "A) niit\xE4 voi hy\xF6dynt\xE4\xE4 vain ihmisten ravintona"
+  OptionTwoText: B) ne kasvavat hitaasti
+  OptionThreeText: C) niiden kasvatus on hankalaa
   CorrectAnswer: 2
   Reasoning: 

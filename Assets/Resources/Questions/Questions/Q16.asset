@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8391c7fbf5719fc47990693ab3fb904b, type: 3}
   m_Name: Q16
   m_EditorClassIdentifier: 
-  Question: "Kuinka monta ihmist\xE4 biotalous ty\xF6llisti vuonna 2014?"
-  OptionOneText: A) 10 000
-  OptionTwoText: B) 115 000
-  OptionThreeText: C) 300 000
+  Question: "Kuinka suuri osa Suomessa kasvavista sienist\xE4 on sy\xF6m\xE4kelpoisia?"
+  OptionOneText: A) 40%
+  OptionTwoText: B) 60%
+  OptionThreeText: C) 80%
   CorrectAnswer: 3
   Reasoning: 
