@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Question: "Olet ostamassa viini\xE4. Kannattaisiko sinun ostaa lasi- vai muovipulloon
     pakattu viini, jos haluat toimia kest\xE4v\xE4sti?"
-  OptionOneText: lasipullo
-  OptionTwoText: muovipullo
+  OptionOneText: Lasipullo
+  OptionTwoText: Muovipullo
   OptionThreeText: 
   CorrectAnswer: 2
   Reasoning: "Lasipullo on kymmenkertaisesti painavampi, jolloin niiden kuljetus

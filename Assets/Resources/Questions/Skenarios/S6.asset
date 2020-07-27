@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Question: "Olet kunnanjohtaja, ja tavoitteenasi on tehd\xE4 kunnastanne ravinneneutraali.
     T\xE4m\xE4 tarkoittaa\u2026"
-  OptionOneText: "orgaanisten ravinteiden hy\xF6dynt\xE4mist\xE4 l\xE4hell\xE4 niiden
+  OptionOneText: "Orgaanisten ravinteiden hy\xF6dynt\xE4mist\xE4 l\xE4hell\xE4 niiden
     syntypaikkaa"
-  OptionTwoText: "ravinnevuotojen ja p\xE4\xE4st\xF6jen hyvitt\xE4mist\xE4 esimerkiksi
+  OptionTwoText: "Ravinnevuotojen ja p\xE4\xE4st\xF6jen hyvitt\xE4mist\xE4 esimerkiksi
     p\xE4\xE4st\xF6kaupan keinoin"
   OptionThreeText: 
   CorrectAnswer: 1

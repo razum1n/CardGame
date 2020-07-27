@@ -6,14 +6,15 @@ using TMPro;
 
 public class CardManager : MonoBehaviour
 {
-    public enum TypeOfCard {SKENARIO, QUESTION};
+    public enum TypeOfCard {SKENARIO, QUESTION}; // type of the card.
 
     public TypeOfCard cardType;
 
-    public CardAsset cardAsset;
+    public CardAsset cardAsset; // card asset that has all the card info.
 
     public QuestionStealing stealing;
 
+    // card info that is loaded from the card asset.
     public TextMeshProUGUI question;
     public TextMeshProUGUI answerOne;
     public TextMeshProUGUI answerTwo;
@@ -21,25 +22,24 @@ public class CardManager : MonoBehaviour
     public TextMeshProUGUI correctInfo;
     public TextMeshProUGUI wrongInfo;
 
+    // object that hold different text objects as child.
     public GameObject cardFace;
     public GameObject cardCorrect;
     public GameObject cardFalse;
 
-    public int score;
+    public int score; // how much points are awarded for right answers
 
-    public int waste;
+    public int waste; // how much waste is generated from incorrect answers.
 
-    public int price;
+    public float fosforPrice; // how much fosfor is gained from correct answers.
 
-    public float fosforPrice;
+    private int answer; // what is the players answer.
 
-    private int answer;
+    public int correctAnswer; // what is the correct answer.
 
-    public int correctAnswer;
+    public bool questionStealing = false; // has the time ran out (only on question card types).
 
-    public bool questionStealing = false;
-
-    public int playerSteal;
+    public int playerSteal; // who is answering/stealing the question (only on question card types).
 
     private void Awake()
     {
@@ -53,6 +53,7 @@ public class CardManager : MonoBehaviour
         }
     }
 
+    // reads the card info from the asset object.
     public void ReadCardInfo()
     {
         if(cardType == TypeOfCard.QUESTION)
@@ -90,6 +91,7 @@ public class CardManager : MonoBehaviour
 
     }
 
+    // button functions for different options.
     public void OptionOne()
     {
         answer = 1;
@@ -113,6 +115,8 @@ public class CardManager : MonoBehaviour
 
     void Answer()
     {
+
+        // different effects for question and scenario cards.
         if(cardType == TypeOfCard.QUESTION)
         {
             if (answer == cardAsset.CorrectAnswer)
@@ -132,14 +136,14 @@ public class CardManager : MonoBehaviour
             }
 
         }
-        else
+        else // scenario card.
         {
             if (answer == cardAsset.CorrectAnswer)
             {
                 cardFace.SetActive(false);
                 cardCorrect.SetActive(true);
                 GameManager.Instance.UpdateScore(score);
-                GameManager.Instance.UpdateWaste(-waste);
+                GameManager.Instance.UpdateWaste(-waste); // removes waste from the player.
                 GameManager.Instance.uiManager.UpdateFosfor(fosforPrice);
                 GameManager.Instance.players[GameManager.Instance.currentPlayer - 1].correctAnswer = true;
             }
@@ -151,6 +155,7 @@ public class CardManager : MonoBehaviour
         }
     }
 
+    // used to reset the cards to default positions.
     public void CardReset()
     {
         cardFace.SetActive(true);

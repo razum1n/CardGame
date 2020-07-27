@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Question: "Haluat sy\xF6d\xE4 p\xE4iv\xE4lliseksi lohta. Kumpi on ymp\xE4rist\xF6n
     kannalta kest\xE4v\xE4mpi vaihtoehto?"
-  OptionOneText: merialueella kasvatettu kirjolohi
-  OptionTwoText: laitoksessa kasvatettu kirjolohi
+  OptionOneText: Merialueella kasvatettu kirjolohi
+  OptionTwoText: Laitoksessa kasvatettu kirjolohi
   OptionThreeText: 
   CorrectAnswer: 2
   Reasoning: "Laitoksessa kiertovesialtaissa kasvatetulla kirjolohella on pienemm\xE4t

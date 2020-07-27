@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Question: "Olet suunnitellut valmistavasi kalaruokaa p\xE4iv\xE4lliseksi. Haluaisit
     tehd\xE4 kest\xE4vi\xE4 valintoja, ja mietit, kumpi olisi parempi vaihtoehto?"
-  OptionOneText: kasvatettu kirjolohifile
-  OptionTwoText: "s\xE4rkikalasta tehty mureke"
+  OptionOneText: Kasvatettu kirjolohifile
+  OptionTwoText: "S\xE4rkikalasta tehty mureke"
   OptionThreeText: 
   CorrectAnswer: 2
-  Reasoning: "Kalamureke voidaan valmistetaan kalan v\xE4hempiarvoisista osista,
-    jolloin elintarviketeollisuudesta ei synny niin paljon h\xE4vikki\xE4. N\xE4in
-    my\xF6sk\xE4\xE4n ravinteita ei mene haaskuun."
+  Reasoning: "Kalamureke voidaan valmistaa kalan v\xE4hempiarvoisista osista, jolloin
+    elintarviketeollisuudesta ei synny niin paljon h\xE4vikki\xE4. N\xE4in my\xF6sk\xE4\xE4n
+    ravinteita ei mene haaskuun."

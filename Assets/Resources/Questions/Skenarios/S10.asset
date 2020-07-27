@@ -15,8 +15,8 @@ MonoBehaviour:
   Question: "Olet ostamassa vaippoja vauvallesi, ja pohdit teippivaippojen, ja pest\xE4vien
     kestovaippojen v\xE4lill\xE4. Kumpi on ymp\xE4rist\xF6\xE4 s\xE4\xE4st\xE4v\xE4mpi
     vaihtoehto?"
-  OptionOneText: teippivaipat
-  OptionTwoText: kestovaipat
+  OptionOneText: Teippivaipat
+  OptionTwoText: Kestovaipat
   OptionThreeText: 
   CorrectAnswer: 2
   Reasoning: "Kaatopaikat ymp\xE4ri maailman t\xE4yttyv\xE4t maatumattomista teippivaipoista,

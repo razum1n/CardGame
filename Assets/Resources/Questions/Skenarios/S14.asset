@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Question: "Olet mets\xE4nomistaja. Mihin vuodenaikaan hakkuut tulisi suorittaa,
     jotta ravinnehuuhtoumaa voitaisiin ehk\xE4ist\xE4 herkill\xE4 kohteilla?"
-  OptionOneText: "kes\xE4ll\xE4"
-  OptionTwoText: talvella
+  OptionOneText: "Kes\xE4ll\xE4"
+  OptionTwoText: Talvella
   OptionThreeText: 
   CorrectAnswer: 2
   Reasoning: "Puut ovat talvisin levossa, jolloin puun laatu on kuivempi ja n\xE4in

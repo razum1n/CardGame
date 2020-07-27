@@ -15,8 +15,8 @@ MonoBehaviour:
   Question: "Olet maanviljelij\xE4, ja sinun t\xE4ytyy p\xE4\xE4tt\xE4\xE4 lannoitatko
     peltosi ulkomailta tilattavalla lannoitteella, vai lehmiesi tuottamalla lannalla.
     Kumpi vaihtoehdoista on kest\xE4v\xE4mpi ymp\xE4rist\xF6lle?"
-  OptionOneText: tilattava lannoite
-  OptionTwoText: "lehm\xE4nlanta"
+  OptionOneText: Tilattava lannoite
+  OptionTwoText: "Lehm\xE4nlanta"
   OptionThreeText: 
   CorrectAnswer: 2
   Reasoning: "Lehm\xE4nlanta on kest\xE4v\xE4mpi vaihtoehto, koska se on luonnonmukaista,

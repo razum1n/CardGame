@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Question: "Olet mets\xE4nhoitaja. Mill\xE4 tavoin voisit pyrki\xE4 est\xE4m\xE4\xE4n
     ravinnehuuhtoumia?"
-  OptionOneText: avaamalla tukkeutuneita ojia
-  OptionTwoText: tukkimalla ojia
+  OptionOneText: Avaamalla tukkeutuneita ojia
+  OptionTwoText: Tukkimalla ojia
   OptionThreeText: 
   CorrectAnswer: 2
   Reasoning: "Ojien kautta syntyy ravinnehuuhtoumia, joten mik\xE4li t\xE4m\xE4 pyrit\xE4\xE4n

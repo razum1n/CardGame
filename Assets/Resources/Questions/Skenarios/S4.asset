@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Question: "Olet ostoksilla ostamassa kasvipohjaista juomaa, ja arvot mantelimaidon
     ja kauramaidon v\xE4lill\xE4. Kumman valitset, jos haluat toimia kest\xE4v\xE4sti?"
-  OptionOneText: kauramaidon
-  OptionTwoText: mantelimaidon
+  OptionOneText: Kauramaidon
+  OptionTwoText: Mantelimaidon
   OptionThreeText: 
   CorrectAnswer: 1
   Reasoning: "Mantelien viljelemiseen kuluu paljon vett\xE4 ja lis\xE4ksi ne on tuotava

@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8391c7fbf5719fc47990693ab3fb904b, type: 3}
-  m_Name: Q36
+  m_Name: Q37
   m_EditorClassIdentifier: 
-  Question: "Mit\xE4 tarkoittaa hiilik\xE4denj\xE4lki?"
-  OptionOneText: "A) Kuvaa tuotteen tai prosessin ilmastohy\xF6tyj\xE4 sen k\xE4ytt\xE4j\xE4lle"
-  OptionTwoText: "B) Ihmisen toiminnan aiheuttamia hiilidioksidip\xE4\xE4st\xF6j\xE4"
+  Question: "Mit\xE4 tarkoittaa hiilijalanj\xE4lki?"
+  OptionOneText: "A) Ihmisen toiminnan aiheuttamia hiilidioksidip\xE4\xE4st\xF6j\xE4"
+  OptionTwoText: "B) Teollisuuden tuottama hiilij\xE4te"
   OptionThreeText: "C) Kuvaa kuinka paljon prosessi tai toiminta sitoo kasvihuonep\xE4\xE4st\xF6j\xE4"
   CorrectAnswer: 1
   Reasoning: 

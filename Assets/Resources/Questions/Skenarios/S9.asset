@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: S9
   m_EditorClassIdentifier: 
   Question: "Omistat m\xF6kin saarella, jonne ainoa kulkureitti on veden yli. Matkustatko
-    m\xF6kille purjeveneell\xE4 vai moottoriveneell\xE4, kun haluat s\xE4\xE4st\xE4\xE4
+    m\xF6kille soutuveneell\xE4 vai moottoriveneell\xE4, kun haluat s\xE4\xE4st\xE4\xE4
     ymp\xE4rist\xF6\xE4?"
-  OptionOneText: moottorivene
-  OptionTwoText: purjevene
+  OptionOneText: Moottorivene
+  OptionTwoText: Soutuvene
   OptionThreeText: 
   CorrectAnswer: 2
-  Reasoning: "Purjevene ei tuota p\xE4\xE4st\xF6j\xE4, kun taas moottorivene laskee
+  Reasoning: "Soutuvene ei tuota p\xE4\xE4st\xF6j\xE4, kun taas moottorivene laskee
     polttoainetta vesist\xF6\xF6n."

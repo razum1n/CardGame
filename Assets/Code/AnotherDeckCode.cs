@@ -5,21 +5,33 @@ using UnityEngine;
 
 public class AnotherDeckCode : MonoBehaviour
 {
-    public enum TypeOfDeck { SKENARIO, QUESTION };
+    public enum TypeOfDeck { SKENARIO, QUESTION }; // what type of deck is in question.
     public TypeOfDeck deckType;
 
-    public UiScript ui;
+    [SerializeField]
+    private UiScript ui;
 
-    public QuestionStealing steal;
+    [SerializeField]
+    private GameStatus gameStatus;
 
-    public GameObject card;
-    public GameObject spawnPoint;
+    [SerializeField]
+    private QuestionStealing steal;
+
+    [SerializeField]
+    private GameObject card;
+
+    [SerializeField]
+    private GameObject otherCard;
 
     public List<CardAsset> cardTemplates = new List<CardAsset>();
 
-    public int price;
+    [SerializeField]
+    private int price;
+
     private int questionNumber = 1;
-    public int cardCount = 0;
+
+    [SerializeField]
+    private int cardCount = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -43,71 +55,61 @@ public class AnotherDeckCode : MonoBehaviour
         questionNumber = questionNumber + 1;
     }
 
+
     public void TryDrawing()
     {
-        if (deckType == TypeOfDeck.SKENARIO && card.GetComponent<CardManager>().cardType == CardManager.TypeOfCard.SKENARIO)
+        if(cardCount > (cardTemplates.Count - 1)) // are there any cards to draw
         {
-            if(GameManager.Instance.HasPlayerDrawnSkenario())
-            {
-                Debug.Log("Card Already Drawn");
-            }
-            else
-            {
-                SpawnCard();
-            }
+            gameStatus.gameEnd = true;
         }
         else
         {
-            if (GameManager.Instance.HasPlayerDrawnQuestion() || (GameManager.Instance.players[GameManager.Instance.currentPlayer - 1].correctAnswer == false))
+            if (deckType == TypeOfDeck.SKENARIO && card.GetComponent<CardManager>().cardType == CardManager.TypeOfCard.SKENARIO)
             {
-                Debug.Log("Card Already Drawn or skenario card not correct");
+                if (GameManager.Instance.HasPlayerDrawnSkenario())
+                {
+                    Debug.Log("Card Already Drawn");
+                }
+                else
+                {
+                    SpawnCard();
+                }
             }
             else
             {
-                SpawnCard();
+                if (GameManager.Instance.HasPlayerDrawnQuestion() || (GameManager.Instance.players[GameManager.Instance.currentPlayer - 1].correctAnswer == false))
+                {
+                    Debug.Log("Card Already Drawn or skenario card not correct");
+                }
+                else
+                {
+                    SpawnCard();
+                }
             }
         }
+
     }
+
     public void SpawnCard()
     {
-        if (deckType == TypeOfDeck.QUESTION)
+        if(deckType == TypeOfDeck.QUESTION)
         {
-
-            if ((GameManager.Instance.players[GameManager.Instance.currentPlayer - 1].score >= price) && (cardCount < cardTemplates.Count))
-            {
-                card.SetActive(true);
-                steal.Timer();
-                GameManager.Instance.sCard.SetActive(false);
-                GameManager.Instance.players[GameManager.Instance.currentPlayer - 1].questionCardDrawn = true;
-                card.GetComponent<CardManager>().cardAsset = cardTemplates[cardCount];
-                card.GetComponent<CardManager>().ReadCardInfo();
-                cardCount++;
-                GameManager.Instance.players[GameManager.Instance.currentPlayer - 1].score -= price;
-            }
-        }
-        else if(deckType == TypeOfDeck.QUESTION)
-        {
-            if (cardCount < cardTemplates.Count)
-            {
-                card.SetActive(true);
-                steal.Timer();
-                GameManager.Instance.players[GameManager.Instance.currentPlayer - 1].questionCardDrawn = true;
-                card.GetComponent<CardManager>().cardAsset = cardTemplates[cardCount];
-                card.GetComponent<CardManager>().ReadCardInfo();
-                cardCount++;
-            }
+            card.SetActive(true);
+            otherCard.SetActive(false);
+            steal.Timer();
+            GameManager.Instance.players[GameManager.Instance.currentPlayer - 1].questionCardDrawn = true;
+            card.GetComponent<CardManager>().cardAsset = cardTemplates[cardCount];
+            card.GetComponent<CardManager>().ReadCardInfo();
+            cardCount++;
         }
         else
         {
-            if (cardCount < cardTemplates.Count)
-            {
-                card.SetActive(true);
-                GameManager.Instance.qCard.SetActive(false);
-                GameManager.Instance.players[GameManager.Instance.currentPlayer - 1].scenarioCardDrawn = true;
-                card.GetComponent<CardManager>().cardAsset = cardTemplates[cardCount];
-                card.GetComponent<CardManager>().ReadCardInfo();
-                cardCount++;
-            }
+            card.SetActive(true);
+            GameManager.Instance.qCard.SetActive(false);
+            GameManager.Instance.players[GameManager.Instance.currentPlayer - 1].scenarioCardDrawn = true;
+            card.GetComponent<CardManager>().cardAsset = cardTemplates[cardCount];
+            card.GetComponent<CardManager>().ReadCardInfo();
+            cardCount++;
         }
     }
 }

@@ -15,8 +15,8 @@ MonoBehaviour:
   Question: "Olet t\xF6iss\xE4 tehtaalla, jossa valmistetaan perunajauhoja. Prosessin
     sivuvirtana syntyy solunestett\xE4. Mit\xE4 t\xE4lle sivuvirralle kannattaisi
     tehd\xE4?"
-  OptionOneText: "se voitaisiin hy\xF6dynt\xE4\xE4 lannoitteena"
-  OptionTwoText: "siit\xE4 voitaisiin jalostaa muita elintarvikkeita"
+  OptionOneText: "Se voitaisiin hy\xF6dynt\xE4\xE4 lannoitteena"
+  OptionTwoText: "Siit\xE4 voitaisiin jalostaa muita elintarvikkeita"
   OptionThreeText: 
   CorrectAnswer: 1
   Reasoning: "Perunajauhojen valmistuksessa syntyv\xE4\xE4 solunestett\xE4 on mahdollista

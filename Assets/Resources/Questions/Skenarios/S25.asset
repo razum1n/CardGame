@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Question: "Tarvitset uuden paidan, ja pohdit ostatko puuvillasta vai lyocellista
     valmistetun vaihtoehdon. Kumpi on ymp\xE4rist\xF6yst\xE4v\xE4llisempi?"
-  OptionOneText: puuvilla
-  OptionTwoText: lyocell
+  OptionOneText: Puuvilla
+  OptionTwoText: Lyocell
   OptionThreeText: 
   CorrectAnswer: 2
   Reasoning: "Puuvillan viljely on kaikkein kemikaali-intensiivisint\xE4 viljely\xE4.

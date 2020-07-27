@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Question: "Valmistat kasvisruokaa yst\xE4villesi, ja pohdit valmistatko avokadoleipi\xE4
     vai nyht\xF6kaurapataa. Kumpi ruokalajeista on ymp\xE4rist\xF6yst\xE4v\xE4llisempi?"
-  OptionOneText: "avokadoleiv\xE4t"
-  OptionTwoText: "nyht\xF6kaurapata"
+  OptionOneText: "Avokadoleiv\xE4t"
+  OptionTwoText: "Nyht\xF6kaurapata"
   OptionThreeText: 
   CorrectAnswer: 2
   Reasoning: "Avokadot vaativat valtavasti vett\xE4 kasvaakseen verrattuna kauran

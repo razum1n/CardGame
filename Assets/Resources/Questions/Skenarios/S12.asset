@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: S12
   m_EditorClassIdentifier: 
   Question: "Olet k\xE4ym\xE4ss\xE4 l\xE4pi l\xE4\xE4kekaappiasi, ja huomaat, ett\xE4
-    sinulla on paljon vanhentuneita l\xE4\xE4kkeit\xE4. Miten toimit?\r"
-  OptionOneText: "palautat vanhat l\xE4\xE4kkeet apteekkiin"
-  OptionTwoText: "lajittelet l\xE4\xE4kkeet ongelmaj\xE4tteeseen"
+    sinulla on paljon vanhentuneita l\xE4\xE4kkeit\xE4. Miten toimit?"
+  OptionOneText: "Palautat vanhat l\xE4\xE4kkeet apteekkiin"
+  OptionTwoText: "Lajittelet l\xE4\xE4kkeet ongelmaj\xE4tteeseen"
   OptionThreeText: 
   CorrectAnswer: 1
   Reasoning: "Vanhat l\xE4\xE4kkeet tulee palauttaa apteekkiin, josta ne toimitetaan

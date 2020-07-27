@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Question: "Ymp\xE4rist\xF6tietoisena kuluttajana pohdit mit\xE4 lis\xE4kett\xE4
     k\xE4ytt\xE4isit ateriaa valmistaessasi, riisi\xE4 vai perunaa?"
-  OptionOneText: "riisi\xE4"
-  OptionTwoText: perunaa
+  OptionOneText: "Riisi\xE4"
+  OptionTwoText: Perunaa
   OptionThreeText: 
   CorrectAnswer: 2
   Reasoning: "Riisi\xE4 t\xE4ytyy tuoda Suomeen kaukaa ulkomailta, mik\xE4 luo p\xE4\xE4st\xF6j\xE4.

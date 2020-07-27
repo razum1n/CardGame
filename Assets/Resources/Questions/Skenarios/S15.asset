@@ -15,8 +15,8 @@ MonoBehaviour:
   Question: "Olet tietoinen kuluttaja, joka haluaa valita pesuaineita, jotka tukevat
     kest\xE4v\xE4\xE4 kehityst\xE4. Mihin sinun tulisi kiinnitt\xE4\xE4 huomiota
     tuotepakkauksissa?"
-  OptionOneText: "ymp\xE4rist\xF6merkint\xF6ihin"
-  OptionTwoText: valmistusmaahan
+  OptionOneText: "Ymp\xE4rist\xF6merkint\xF6ihin"
+  OptionTwoText: Valmistusmaahan
   OptionThreeText: 
   CorrectAnswer: 1
   Reasoning: "Ymp\xE4rist\xF6merkinn\xE4t ja sertifikaatit kertovat tuotteen hell\xE4varaisuudesta

@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: S28
   m_EditorClassIdentifier: 
   Question: "Olet maataloustuottaja. Kumpi n\xE4ist\xE4 on kest\xE4v\xE4mpi tuotantotapa?"
-  OptionOneText: "samalla pellolla viljell\xE4\xE4n eri kasveja per\xE4kk\xE4isin\xE4
+  OptionOneText: "Samalla pellolla viljell\xE4\xE4n eri kasveja per\xE4kk\xE4isin\xE4
     vuosina"
-  OptionTwoText: saman kasvin viljely samalla pellolla joka vuosi
+  OptionTwoText: Saman kasvin viljely samalla pellolla joka vuosi
   OptionThreeText: 
   CorrectAnswer: 1
   Reasoning: "Viljelykierto parantaa typensidontaa ja sen tarkoituksena on v\xE4hent\xE4\xE4

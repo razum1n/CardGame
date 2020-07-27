@@ -7,38 +7,40 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     
-    public GameObject[] listOfPlayerScoreUi;
+    public GameObject[] listOfPlayerScoreUi; // array of player score ui elements.
     public GameObject[] listOfPlayerWasteUi;
     public UiScript uiManager;
-    public Transform fosforBar;
-    public float fosforAmmount;
-    public GameObject qCard;
-    public GameObject sCard;
+    public GameObject qCard; // question card object.
+    public GameObject sCard; // scenario card object.
     
 
     public class Player
     {
-        public int score;
-        public int waste;
-        public bool scenarioCardDrawn = false;
-        public bool questionCardDrawn = false; // checks weather the player has drawn a specific card this turn.
-        public bool correctAnswer = false;
-        public string name;
+        public int score; // players score
+        public int waste; // players waste
+        public bool scenarioCardDrawn = false; // used to check weather player has drawn a specific card this turn.
+        public bool questionCardDrawn = false;
+        public bool correctAnswer = false; // used to check weather player answered correctly.
+        public string name; // players name.
 
     }
 
-    public Player[] players;
-    public int numberOfPlayers;
+    public Player[] players; // array of player objects.
+    public int numberOfPlayers; // number of players in game.
 
     public static GameManager Instance { get; private set; }
 
-    public int currentPlayer = 0;
+    public int currentPlayer = 1; // whose turn it is.
+
     void Awake()
     {
+        // create an instance of GameManager.
         if (Instance == null) { Instance = this; } else { Debug.Log("Warning: multiple " + this + " in scene!"); }
         DontDestroyOnLoad(this.gameObject);
     }
 
+
+    // check for drawn cards. Returns true if drawn.
     public bool HasPlayerDrawnSkenario()
     {
         return players[currentPlayer - 1].scenarioCardDrawn;
@@ -49,6 +51,8 @@ public class GameManager : MonoBehaviour
         return players[currentPlayer - 1].questionCardDrawn;
     }
 
+
+    // called at the start of the game.
     public void GameStart()
     {
         uiManager.CreatePlayerUi();
@@ -57,12 +61,15 @@ public class GameManager : MonoBehaviour
         sCard.SetActive(false);
     }
 
+    // finds the object and assings them to the arrays.
     void FindPlayerUi()
     {
         listOfPlayerScoreUi = GameObject.FindGameObjectsWithTag("PlayerScore");
         listOfPlayerWasteUi = GameObject.FindGameObjectsWithTag("PlayerWaste");
     }
 
+
+    //Creates a number of player object.
     public void CreatePlayers()
     {
         players = new Player[numberOfPlayers];
@@ -74,6 +81,7 @@ public class GameManager : MonoBehaviour
 
     }
 
+    // updates the ui with current scores and waste.
     public void UpdateUi()
     {
         for(int i=0;i<numberOfPlayers;i++)
@@ -83,16 +91,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // updates the score of the current player.
     public void UpdateScore(int newScore, bool playerSteal = false, int playerNumber = 0)
     {
-        if (!playerSteal)
+        if (!playerSteal) // checks weather another player has chosen to answer the question
         {
             players[currentPlayer - 1].score += newScore;
             if (players[currentPlayer - 1].score < 0)
                 players[currentPlayer - 1].score = 0;
             UpdateUi();
         }
-        else if (playerSteal)
+        else if (playerSteal) // if another player has chosen to answer the score is then given to them.
         {
             players[playerNumber].score += newScore;
             if (players[playerNumber].score < 0)
@@ -101,6 +110,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // works the same way as UpdateScore function.
     public void UpdateWaste(int newWaste, bool playerSteal = false, int playerNumber = 0)
     {
         if (!playerSteal)
@@ -127,6 +137,12 @@ public class GameManager : MonoBehaviour
     public void ExitApplication()
     {
         Application.Quit();
+    }
+
+    public void ReloadScene()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
     }
 
 }
