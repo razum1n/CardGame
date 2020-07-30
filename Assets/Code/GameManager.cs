@@ -35,8 +35,10 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         // create an instance of GameManager.
-        if (Instance == null) { Instance = this; } else { Debug.Log("Warning: multiple " + this + " in scene!"); }
-        DontDestroyOnLoad(this.gameObject);
+        if (Instance == null)
+            Instance = this;
+        else if (Instance != this)
+            Destroy(gameObject);
     }
 
 
@@ -129,6 +131,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void ResetPlayers()
+    {
+        for (int i=0;i<numberOfPlayers;i++)
+        {
+            players[i].score = 0;
+            players[i].waste = 0;
+            players[i].correctAnswer = false;
+            players[i].questionCardDrawn = false;
+            players[i].scenarioCardDrawn = false;
+        }
+    }
+
     public void LoadMainMenu()
     {
         SceneManager.LoadScene(0);
@@ -141,6 +155,7 @@ public class GameManager : MonoBehaviour
 
     public void ReloadScene()
     {
+        ResetPlayers();
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
     }

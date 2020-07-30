@@ -2063,7 +2063,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerBar: {fileID: 1900097669}
   questionCard: {fileID: 1342361472}
-  timer: 15
+  timer: 10
   playerIconPanel: {fileID: 1100671096}
   playerButtons:
   - {fileID: 1163080479}

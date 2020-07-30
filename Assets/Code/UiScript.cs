@@ -113,6 +113,8 @@ public class UiScript : MonoBehaviour
 
     public void BackToMenu()
     {
+        GameManager.Instance.ResetPlayers();
+        GameManager.Instance.numberOfPlayers = 2;
         GameManager.Instance.LoadMainMenu();
     }
 
